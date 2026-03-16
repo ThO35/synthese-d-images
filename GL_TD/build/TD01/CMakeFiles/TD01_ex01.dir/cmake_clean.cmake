@@ -5,6 +5,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/TD01_ex01.dir/draw_scene.cpp.o.d"
   "CMakeFiles/TD01_ex01.dir/ex01.cpp.o"
   "CMakeFiles/TD01_ex01.dir/ex01.cpp.o.d"
+  "CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o"
+  "CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o.d"
+  "CMakeFiles/TD01_ex01.dir/utils.cpp.o"
+  "CMakeFiles/TD01_ex01.dir/utils.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

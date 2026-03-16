@@ -83,10 +83,38 @@ TD01/CMakeFiles/TD01_ex01.dir/draw_scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TD01_ex01.dir/draw_scene.cpp.s"
 	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/TD01/draw_scene.cpp -o CMakeFiles/TD01_ex01.dir/draw_scene.cpp.s
 
+TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/flags.make
+TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp
+TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o -MF CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o.d -o CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp
+
+TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TD01_ex01.dir/init_terrain.cpp.i"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp > CMakeFiles/TD01_ex01.dir/init_terrain.cpp.i
+
+TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TD01_ex01.dir/init_terrain.cpp.s"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp -o CMakeFiles/TD01_ex01.dir/init_terrain.cpp.s
+
+TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/flags.make
+TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp
+TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o -MF CMakeFiles/TD01_ex01.dir/utils.cpp.o.d -o CMakeFiles/TD01_ex01.dir/utils.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp
+
+TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TD01_ex01.dir/utils.cpp.i"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp > CMakeFiles/TD01_ex01.dir/utils.cpp.i
+
+TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TD01_ex01.dir/utils.cpp.s"
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp -o CMakeFiles/TD01_ex01.dir/utils.cpp.s
+
 TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/flags.make
 TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/TD01/ex01.cpp
 TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o: TD01/CMakeFiles/TD01_ex01.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o"
 	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o -MF CMakeFiles/TD01_ex01.dir/ex01.cpp.o.d -o CMakeFiles/TD01_ex01.dir/ex01.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/ex01.cpp
 
 TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.i: cmake_force
@@ -100,12 +128,16 @@ TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.s: cmake_force
 # Object files for target TD01_ex01
 TD01_ex01_OBJECTS = \
 "CMakeFiles/TD01_ex01.dir/draw_scene.cpp.o" \
+"CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o" \
+"CMakeFiles/TD01_ex01.dir/utils.cpp.o" \
 "CMakeFiles/TD01_ex01.dir/ex01.cpp.o"
 
 # External object files for target TD01_ex01
 TD01_ex01_EXTERNAL_OBJECTS =
 
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/draw_scene.cpp.o
+/home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o
+/home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/build.make
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: /usr/lib/x86_64-linux-gnu/libOpenGL.so
@@ -118,7 +150,7 @@ TD01_ex01_EXTERNAL_OBJECTS =
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: /usr/lib/x86_64-linux-gnu/libm.so
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: /usr/lib/x86_64-linux-gnu/libX11.so
 /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01: TD01/CMakeFiles/TD01_ex01.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/tomasz/Git/synthese-d-images/GL_TD/bin/TD01_ex01"
 	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/TD01 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TD01_ex01.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

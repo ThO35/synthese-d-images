@@ -133,6 +133,18 @@
 },
 {
   "directory": "/home/tomasz/Git/synthese-d-images/GL_TD/build/TD01",
+  "command": "/usr/bin/c++  -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac -std=c++11 -Wall -Wextra -o CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp",
+  "file": "/home/tomasz/Git/synthese-d-images/GL_TD/TD01/init_terrain.cpp",
+  "output": "TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o"
+},
+{
+  "directory": "/home/tomasz/Git/synthese-d-images/GL_TD/build/TD01",
+  "command": "/usr/bin/c++  -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac -std=c++11 -Wall -Wextra -o CMakeFiles/TD01_ex01.dir/utils.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp",
+  "file": "/home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.cpp",
+  "output": "TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o"
+},
+{
+  "directory": "/home/tomasz/Git/synthese-d-images/GL_TD/build/TD01",
   "command": "/usr/bin/c++  -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac -std=c++11 -Wall -Wextra -o CMakeFiles/TD01_ex01.dir/ex01.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/TD01/ex01.cpp",
   "file": "/home/tomasz/Git/synthese-d-images/GL_TD/TD01/ex01.cpp",
   "output": "TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o"

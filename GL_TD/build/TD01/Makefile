@@ -224,6 +224,54 @@ ex01.cpp.s:
 	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.s
 .PHONY : ex01.cpp.s
 
+init_terrain.o: init_terrain.cpp.o
+.PHONY : init_terrain.o
+
+# target to build an object file
+init_terrain.cpp.o:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.o
+.PHONY : init_terrain.cpp.o
+
+init_terrain.i: init_terrain.cpp.i
+.PHONY : init_terrain.i
+
+# target to preprocess a source file
+init_terrain.cpp.i:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.i
+.PHONY : init_terrain.cpp.i
+
+init_terrain.s: init_terrain.cpp.s
+.PHONY : init_terrain.s
+
+# target to generate assembly for a file
+init_terrain.cpp.s:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/init_terrain.cpp.s
+.PHONY : init_terrain.cpp.s
+
+utils.o: utils.cpp.o
+.PHONY : utils.o
+
+# target to build an object file
+utils.cpp.o:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o
+.PHONY : utils.cpp.o
+
+utils.i: utils.cpp.i
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.cpp.i:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.i
+.PHONY : utils.cpp.i
+
+utils.s: utils.cpp.s
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.cpp.s:
+	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.s
+.PHONY : utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -243,6 +291,12 @@ help:
 	@echo "... ex01.o"
 	@echo "... ex01.i"
 	@echo "... ex01.s"
+	@echo "... init_terrain.o"
+	@echo "... init_terrain.i"
+	@echo "... init_terrain.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

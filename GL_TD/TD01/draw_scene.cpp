@@ -108,9 +108,9 @@ void drawFrame()
 void leaf_minecraf(int taille)
 {
 
-	auto rayonMax = (taille / 4) + 2;
-	auto leaf_start = taille / 1.5;
-	myEngine.setFlatColor(0.2, 0.6, 0.2);
+	int rayonMax = (taille / 6) + 1;
+	int leaf_start = taille / 2;
+	myEngine.setFlatColor(0.0, 0.0, 1.);
 	for (auto z = leaf_start; z <= taille + 2; z++)
 	{
 
@@ -142,7 +142,7 @@ void leaf_minecraf(int taille)
 void tree_minecraft(int taille)
 {
 
-	myEngine.setFlatColor(0.45, 0.3, 0.1);
+	myEngine.setFlatColor(1, 0.0, 0.0);
 	for (auto i = 0; i < taille; i++)
 	{
 		myEngine.mvMatrixStack.pushMatrix();
@@ -184,5 +184,5 @@ void drawScene()
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 
-	tree_minecraft(5);
+	tree_minecraft(10);
 }

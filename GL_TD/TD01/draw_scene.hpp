@@ -15,22 +15,24 @@ using namespace glbasimac;
 /* Camera parameters and functions */
 static const float Z_NEAR{0.1f};
 static const float Z_FAR{500.f};
-extern float angle_theta; // Angle between x axis and viewpoint
-extern float angle_phy;   // Angle between z axis and viewpoint
-extern float dist_zoom;   // Distance between origin and viewpoint
+extern Vector3D pos_camera;     // Position of the camera
+extern float angle_horizontal;  // Angle between x axis and viewpoint
+extern float angle_vertical;    // Angle between z axis and viewpoint
+extern float speed;             // Camera movement speed
 
+/* OpenGL Engine */
+extern GLBI_Engine myEngine;
+
+/* Terrain parameters */
 extern unsigned char minVal;
 extern int length, width;
 extern std::vector<char> donnes;
 extern double scaling;
 
-/* OpenGL Engine */
-extern GLBI_Engine myEngine;
-
 void initScene();
-
-void drawFrame();
 
 void drawScene();
 
 void initTerrain();
+
+void update_altitude();

@@ -1,9 +1,12 @@
 #include "draw_scene.hpp"
 
 /// Camera parameters
-float angle_theta{45.0}; // Angle between x axis and viewpoint
-float angle_phy{30.0};	 // Angle between z axis and viewpoint
-float dist_zoom{30.0};	 // Distance between origin and viewpoint
+Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0);	// Position of the camera
+float angle_horizontal{0.0}; 						// Angle between x axis and viewpoint
+float angle_vertical{0.0};	 						// Angle between z axis and viewpoint
+float speed{5.0};									// Camera movement speed
+
+std::vector<float> points{};
 
 GLBI_Engine myEngine;
 STP3D::StandardMesh grass;
@@ -16,7 +19,7 @@ float Sp = 1.0f;
 
 void initTerrain()
 {
-	std::vector<float> points{}, colors{}, uvs{}, normals{};
+	std::vector<float> colors{}, uvs{}, normals{};
 
 	for (int i = 0; i < length - 1; i++)
 	{
@@ -53,9 +56,9 @@ void initTerrain()
 	grass.createVAO(); // Enregistrement OpenGL
 }
 
+
 void initScene()
 {
-
 	cube = basicCube(0.5);
 	cube->createVAO();
 	std::vector<float> baseCarre{-10.0, -10.0, 0.0,
@@ -160,7 +163,6 @@ void tree_minecraft(int taille)
 
 void drawScene()
 {
-
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
 	herbeTexture.attachTexture();
@@ -185,4 +187,19 @@ void drawScene()
 	myEngine.mvMatrixStack.popMatrix();
 
 	tree_minecraft(10);
+}
+
+
+
+void update_altitude()
+{
+	// Born to map
+	if (pos_camera[0] <= -(length / 2)) pos_camera[0] = -(length / 2);
+	if (pos_camera[0] >=   length / 2 - 1)  pos_camera[0] =   length / 2 - 1;
+	if (pos_camera[1] <= -(width / 2))  pos_camera[1] = -(width / 2);
+	if (pos_camera[1] >=   width / 2 - 1)   pos_camera[1] =   width / 2 - 1;
+	int x = length / 2 + pos_camera[0];
+	int y = width / 2 + pos_camera[1];
+	int coord_a = x * (length - 1)  + y;
+	pos_camera[2] = points[coord_a * 18 + 2] + 1;
 }

@@ -56,7 +56,7 @@ void read_file()
     for (int i = 0; i < width * length; i++)
     {
         unsigned char current = static_cast<unsigned char>(donnes[i]);
-        std::cout << "Char :" << donnes[i] << " --- " << donnes[i] << " " << i << std::endl;
+        // std::cout << "Char :" << donnes[i] << " --- " << donnes[i] << " " << i << std::endl;
         if (current != 0 && current < minVal)
         {
             minVal = current;

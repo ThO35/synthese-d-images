@@ -30,10 +30,12 @@ StandardMesh *rectangle;
 StandardMesh *a_frame;
 IndexedMesh *circle;
 
+/* Terrain properties */
 unsigned char minVal = 255;
 int length, width;
 std::vector<char> donnes;
 double scaling = 0.1;
+bool is_ground_view = false;
 
 /* Error handling function */
 void onError(int error, const char *description)
@@ -53,40 +55,73 @@ void onWindowResized(GLFWwindow * /*window*/, int width, int height)
 void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods*/)
 {
 	int is_pressed = (action == GLFW_PRESS);
-	switch (key)
+	int is_repeat = (action == GLFW_REPEAT);
+	if (is_pressed)
 	{
-	case GLFW_KEY_A:
-	case GLFW_KEY_ESCAPE:
-		glfwSetWindowShouldClose(window, GLFW_TRUE);
-		break;
-	case GLFW_KEY_L:
-		if (is_pressed)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		break;
-	case GLFW_KEY_P:
-		if (is_pressed)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-		break;
-	case GLFW_KEY_UP:
-		angle_phy += 1.0;
-		break;
-	case GLFW_KEY_DOWN:
-		angle_phy -= 1.0;
-		break;
-	case GLFW_KEY_I:
-		dist_zoom *= 0.95;
-		break;
-	case GLFW_KEY_K:
-		dist_zoom *= 1.05;
-		break;
-	case GLFW_KEY_LEFT:
-		angle_theta += 1.0;
-		break;
-	case GLFW_KEY_RIGHT:
-		angle_theta -= 1.0;
-		break;
-	default:
-		std::cerr << "Touche non gérée " << key << std::endl;
+		switch (key)
+		{
+			case GLFW_KEY_ESCAPE:
+				glfwSetWindowShouldClose(window, GLFW_TRUE);
+				break;
+			case GLFW_KEY_L:
+				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+				break;
+			case GLFW_KEY_P:
+				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+				break;
+			case GLFW_KEY_F:
+				is_ground_view = !is_ground_view;
+				break;
+		}
+	}
+
+	if (is_pressed || is_repeat)
+	{
+		switch (key)
+		{
+			case GLFW_KEY_UP:		// Turn up
+				angle_vertical += 1.0 * speed;
+				break;
+			case GLFW_KEY_DOWN:		// Turn down
+				angle_vertical -= 1.0 * speed;
+				break;
+			case GLFW_KEY_LEFT:		// Turn left
+				angle_horizontal += 1.0 * speed;
+				break;
+			case GLFW_KEY_RIGHT:	// Turn right
+				angle_horizontal -= 1.0 * speed;
+				break;
+			case GLFW_KEY_W:		// Shift forward
+				pos_camera[0] += cos(deg2rad(angle_horizontal)) * speed;
+				pos_camera[1] += sin(deg2rad(angle_horizontal)) * speed;
+				break;
+			case GLFW_KEY_S:		// Shift backward
+				pos_camera[0] -= cos(deg2rad(angle_horizontal)) * speed;
+				pos_camera[1] -= sin(deg2rad(angle_horizontal)) * speed;
+				break;
+			case GLFW_KEY_A:		// Shift left
+				pos_camera[0] -= sin(deg2rad(angle_horizontal)) * speed;
+				pos_camera[1] += cos(deg2rad(angle_horizontal)) * speed;
+				break;
+			case GLFW_KEY_D:		// Shift right
+				pos_camera[0] += sin(deg2rad(angle_horizontal)) * speed;
+				pos_camera[1] -= cos(deg2rad(angle_horizontal)) * speed;
+				break;
+			case GLFW_KEY_SPACE:	// Shift up
+				pos_camera[2] += 1.0 * speed;
+				break;
+			case GLFW_KEY_C:		// Shift down
+				pos_camera[2] -= 1.0 * speed;
+				break;
+			case GLFW_KEY_E:		// Speed up
+				speed += 1;
+				std::cout << "Speed  up  : " << speed << std::endl;
+				break;
+			case GLFW_KEY_Q:		// Speed down
+				speed = (speed <= 1)? 1: speed - 1;
+				std::cout << "Speed down : " << speed << std::endl;
+				break;
+		}
 	}
 }
 
@@ -159,10 +194,12 @@ int main(int /*argc*/, char ** /*argv*/)
 		/* Fix camera position */
 		myEngine.mvMatrixStack.loadIdentity();
 
-		Vector3D pos_camera = Vector3D(dist_zoom * cos(deg2rad(angle_theta)) * cos(deg2rad(angle_phy)),
-									   dist_zoom * sin(deg2rad(angle_theta)) * cos(deg2rad(angle_phy)),
-									   dist_zoom * sin(deg2rad(angle_phy)));
-		Vector3D viewed_point = Vector3D(0.0, 0.0, 0.0);
+		if (is_ground_view) update_altitude();
+
+		Vector3D viewed_point = Vector3D(pos_camera[0] + cos(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
+									     pos_camera[1] + sin(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
+									     pos_camera[2] + sin(deg2rad(angle_vertical)));
+		
 		Vector3D up_vector = Vector3D(0.0, 0.0, 1.0); // DO NOT TOUCH IT
 		Matrix4D viewMatrix = Matrix4D::lookAt(pos_camera, viewed_point, up_vector);
 		myEngine.setViewMatrix(viewMatrix);

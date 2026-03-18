@@ -305,9 +305,9 @@ third_party/glbasimac/CMakeFiles/glbasimac.dir/clean:
 # Target rules for target TD01/CMakeFiles/TD01_ex01.dir
 
 # All Build rule for target.
+TD01/CMakeFiles/TD01_ex01.dir/all: CMakeFiles/glad.dir/all
 TD01/CMakeFiles/TD01_ex01.dir/all: third_party/glfw/src/CMakeFiles/glfw.dir/all
 TD01/CMakeFiles/TD01_ex01.dir/all: third_party/glbasimac/CMakeFiles/glbasimac.dir/all
-TD01/CMakeFiles/TD01_ex01.dir/all: CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/depend
 	$(MAKE) $(MAKESILENT) -f TD01/CMakeFiles/TD01_ex01.dir/build.make TD01/CMakeFiles/TD01_ex01.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target TD01_ex01"

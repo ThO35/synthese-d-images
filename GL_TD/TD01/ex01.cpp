@@ -83,6 +83,11 @@ void movement(GLFWwindow *window)
 		pos_camera[0] += sin(deg2rad(angle_horizontal)) * speed;
 		pos_camera[1] -= cos(deg2rad(angle_horizontal)) * speed;
 	}
+
+	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
+		pos_camera[2] -= 1.0 * speed;
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+		pos_camera[2] += 1.0 * speed;
 }
 
 void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods*/)

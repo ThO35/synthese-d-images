@@ -1,10 +1,13 @@
 #include "draw_scene.hpp"
 
-/// Camera parameters
-Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0); // Position of the camera
-float angle_horizontal{0.0};					 // Angle between x axis and viewpoint
-float angle_vertical{0.0};						 // Angle between z axis and viewpoint
-float speed{5.0};								 // Camera movement speed
+// Order UVs
+const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
+
+// Camera parameters
+Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0);	// Position of the camera
+float angle_horizontal{0.0}; 						// Angle between x axis and viewpoint
+float angle_vertical{0.0};	 						// Angle between z axis and viewpoint
+float speed{5.0};									// Camera movement speed
 
 std::vector<float> points{};
 
@@ -20,6 +23,7 @@ float Sp = 1.0f;
 void initTerrain()
 {
 	std::vector<float> colors{}, uvs{}, normals{};
+	srand(time(NULL));
 
 	for (int i = 0; i < length - 1; i++)
 	{
@@ -34,16 +38,17 @@ void initTerrain()
 			float h_B = donnes[coord_B] == 0 ? tree_hauteur(i, j + 1) : static_cast<float>(static_cast<unsigned char>(donnes[coord_B]));
 			float h_C = donnes[coord_C] == 0 ? tree_hauteur(i + 1, j) : static_cast<float>(static_cast<unsigned char>(donnes[coord_C]));
 			float h_D = donnes[coord_D] == 0 ? tree_hauteur(i + 1, j + 1) : static_cast<float>(static_cast<unsigned char>(donnes[coord_D]));
-
+			
+			int value = rand() % 4;
 			// Triangle 1 (A, B, D)
-			add_points(i, j, h_A, 0.0f, 0.0f, points, colors, uvs, normals);
-			add_points(i, j + 1, h_B, 0.0f, 1.0f, points, colors, uvs, normals);
-			add_points(i + 1, j + 1, h_D, 1.0f, 1.0f, points, colors, uvs, normals);
+			add_points(i,     j,     h_A, UVS[value][0],           UVS[value][1],           points, colors, uvs, normals);
+			add_points(i,     j + 1, h_B, UVS[(value + 1) % 4][0], UVS[(value + 1) % 4][1], points, colors, uvs, normals);
+			add_points(i + 1, j + 1, h_D, UVS[(value + 2) % 4][0], UVS[(value + 2) % 4][1], points, colors, uvs, normals);
 
 			// Triangle 2 (A, C, D)
-			add_points(i, j, h_A, 0.0f, 0.0f, points, colors, uvs, normals);
-			add_points(i + 1, j, h_C, 1.0f, 0.0f, points, colors, uvs, normals);
-			add_points(i + 1, j + 1, h_D, 1.0f, 1.0f, points, colors, uvs, normals);
+			add_points(i,     j,     h_A, UVS[value][0],           UVS[value][1],           points, colors, uvs, normals);
+			add_points(i + 1, j,     h_C, UVS[(value + 3) % 4][0], UVS[(value + 3) % 4][1], points, colors, uvs, normals);
+			add_points(i + 1, j + 1, h_D, UVS[(value + 2) % 4][0], UVS[(value + 2) % 4][1], points, colors, uvs, normals);
 		}
 	}
 

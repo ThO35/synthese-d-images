@@ -1,10 +1,10 @@
 #include "draw_scene.hpp"
 
 /// Camera parameters
-Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0);	// Position of the camera
-float angle_horizontal{0.0}; 						// Angle between x axis and viewpoint
-float angle_vertical{0.0};	 						// Angle between z axis and viewpoint
-float speed{5.0};									// Camera movement speed
+Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0); // Position of the camera
+float angle_horizontal{0.0};					 // Angle between x axis and viewpoint
+float angle_vertical{0.0};						 // Angle between z axis and viewpoint
+float speed{5.0};								 // Camera movement speed
 
 std::vector<float> points{};
 
@@ -55,7 +55,6 @@ void initTerrain()
 	grass.addOneBuffer(3, 3, colors.data(), "Colors", true);
 	grass.createVAO(); // Enregistrement OpenGL
 }
-
 
 void initScene()
 {
@@ -129,9 +128,6 @@ void leaf_minecraf(int taille)
 			{
 				if (x == 0 && y == 0 && z < taille)
 					continue;
-
-				// feuille aleatoire
-
 				myEngine.mvMatrixStack.pushMatrix();
 				myEngine.mvMatrixStack.addTranslation({x * 0.5f, y * 0.5f, z * 0.5f});
 				myEngine.updateMvMatrix();
@@ -189,17 +185,19 @@ void drawScene()
 	tree_minecraft(10);
 }
 
-
-
 void update_altitude()
 {
 	// Born to map
-	if (pos_camera[0] <= -(length / 2)) pos_camera[0] = -(length / 2);
-	if (pos_camera[0] >=   length / 2 - 1)  pos_camera[0] =   length / 2 - 1;
-	if (pos_camera[1] <= -(width / 2))  pos_camera[1] = -(width / 2);
-	if (pos_camera[1] >=   width / 2 - 1)   pos_camera[1] =   width / 2 - 1;
+	if (pos_camera[0] <= -(length / 2))
+		pos_camera[0] = -(length / 2);
+	if (pos_camera[0] >= length / 2 - 1)
+		pos_camera[0] = length / 2 - 1;
+	if (pos_camera[1] <= -(width / 2))
+		pos_camera[1] = -(width / 2);
+	if (pos_camera[1] >= width / 2 - 1)
+		pos_camera[1] = width / 2 - 1;
 	int x = length / 2 + pos_camera[0];
 	int y = width / 2 + pos_camera[1];
-	int coord_a = x * (length - 1)  + y;
+	int coord_a = x * (length - 1) + y;
 	pos_camera[2] = points[coord_a * 18 + 2] + 1;
 }

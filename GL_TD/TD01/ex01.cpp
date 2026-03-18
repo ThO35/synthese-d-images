@@ -52,6 +52,39 @@ void onWindowResized(GLFWwindow * /*window*/, int width, int height)
 	myEngine.set3DProjection(60.0, aspectRatio, Z_NEAR, Z_FAR);
 }
 
+void movement(GLFWwindow *window)
+{
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+		angle_vertical += 1.0f * speed;
+	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+		angle_vertical -= 1.0f * speed;
+	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+		angle_horizontal += 1.0f * speed;
+	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+		angle_horizontal -= 1.0f * speed;
+
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+	{
+		pos_camera[0] += cos(deg2rad(angle_horizontal)) * speed;
+		pos_camera[1] += sin(deg2rad(angle_horizontal)) * speed;
+	}
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+	{
+		pos_camera[0] -= cos(deg2rad(angle_horizontal)) * speed;
+		pos_camera[1] -= sin(deg2rad(angle_horizontal)) * speed;
+	}
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+	{
+		pos_camera[0] -= sin(deg2rad(angle_horizontal)) * speed;
+		pos_camera[1] += cos(deg2rad(angle_horizontal)) * speed;
+	}
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+	{
+		pos_camera[0] += sin(deg2rad(angle_horizontal)) * speed;
+		pos_camera[1] -= cos(deg2rad(angle_horizontal)) * speed;
+	}
+}
+
 void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods*/)
 {
 	int is_pressed = (action == GLFW_PRESS);
@@ -60,18 +93,18 @@ void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods
 	{
 		switch (key)
 		{
-			case GLFW_KEY_ESCAPE:
-				glfwSetWindowShouldClose(window, GLFW_TRUE);
-				break;
-			case GLFW_KEY_L:
-				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-				break;
-			case GLFW_KEY_P:
-				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-				break;
-			case GLFW_KEY_F:
-				is_ground_view = !is_ground_view;
-				break;
+		case GLFW_KEY_ESCAPE:
+			glfwSetWindowShouldClose(window, GLFW_TRUE);
+			break;
+		case GLFW_KEY_L:
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			break;
+		case GLFW_KEY_P:
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+			break;
+		case GLFW_KEY_F:
+			is_ground_view = !is_ground_view;
+			break;
 		}
 	}
 
@@ -79,48 +112,14 @@ void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods
 	{
 		switch (key)
 		{
-			case GLFW_KEY_UP:		// Turn up
-				angle_vertical += 1.0 * speed;
-				break;
-			case GLFW_KEY_DOWN:		// Turn down
-				angle_vertical -= 1.0 * speed;
-				break;
-			case GLFW_KEY_LEFT:		// Turn left
-				angle_horizontal += 1.0 * speed;
-				break;
-			case GLFW_KEY_RIGHT:	// Turn right
-				angle_horizontal -= 1.0 * speed;
-				break;
-			case GLFW_KEY_W:		// Shift forward
-				pos_camera[0] += cos(deg2rad(angle_horizontal)) * speed;
-				pos_camera[1] += sin(deg2rad(angle_horizontal)) * speed;
-				break;
-			case GLFW_KEY_S:		// Shift backward
-				pos_camera[0] -= cos(deg2rad(angle_horizontal)) * speed;
-				pos_camera[1] -= sin(deg2rad(angle_horizontal)) * speed;
-				break;
-			case GLFW_KEY_A:		// Shift left
-				pos_camera[0] -= sin(deg2rad(angle_horizontal)) * speed;
-				pos_camera[1] += cos(deg2rad(angle_horizontal)) * speed;
-				break;
-			case GLFW_KEY_D:		// Shift right
-				pos_camera[0] += sin(deg2rad(angle_horizontal)) * speed;
-				pos_camera[1] -= cos(deg2rad(angle_horizontal)) * speed;
-				break;
-			case GLFW_KEY_SPACE:	// Shift up
-				pos_camera[2] += 1.0 * speed;
-				break;
-			case GLFW_KEY_C:		// Shift down
-				pos_camera[2] -= 1.0 * speed;
-				break;
-			case GLFW_KEY_E:		// Speed up
-				speed += 1;
-				std::cout << "Speed  up  : " << speed << std::endl;
-				break;
-			case GLFW_KEY_Q:		// Speed down
-				speed = (speed <= 1)? 1: speed - 1;
-				std::cout << "Speed down : " << speed << std::endl;
-				break;
+		case GLFW_KEY_E: // Speed up
+			speed += 1;
+			std::cout << "Speed  up  : " << speed << std::endl;
+			break;
+		case GLFW_KEY_Q: // Speed down
+			speed = (speed <= 1) ? 1 : speed - 1;
+			std::cout << "Speed down : " << speed << std::endl;
+			break;
 		}
 	}
 }
@@ -184,7 +183,7 @@ int main(int /*argc*/, char ** /*argv*/)
 	{
 		/* Get time (in second) at loop beginning */
 		double startTime = glfwGetTime();
-
+		movement(window);
 		/* Render begins here */
 		glClearColor(0.f, 0.0f, 0.2f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -194,12 +193,13 @@ int main(int /*argc*/, char ** /*argv*/)
 		/* Fix camera position */
 		myEngine.mvMatrixStack.loadIdentity();
 
-		if (is_ground_view) update_altitude();
+		if (is_ground_view)
+			update_altitude();
 
 		Vector3D viewed_point = Vector3D(pos_camera[0] + cos(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
-									     pos_camera[1] + sin(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
-									     pos_camera[2] + sin(deg2rad(angle_vertical)));
-		
+										 pos_camera[1] + sin(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
+										 pos_camera[2] + sin(deg2rad(angle_vertical)));
+
 		Vector3D up_vector = Vector3D(0.0, 0.0, 1.0); // DO NOT TOUCH IT
 		Matrix4D viewMatrix = Matrix4D::lookAt(pos_camera, viewed_point, up_vector);
 		myEngine.setViewMatrix(viewMatrix);

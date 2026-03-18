@@ -31,6 +31,7 @@ TD01/CMakeFiles/TD01_ex01.dir/draw_scene.cpp.o
  /usr/include/asm-generic/posix_types.h
  /usr/include/asm-generic/types.h
  /usr/include/assert.h
+ /usr/include/c++/13/array
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bits/alloc_traits.h
  /usr/include/c++/13/bits/allocator.h
@@ -94,6 +95,7 @@ TD01/CMakeFiles/TD01_ex01.dir/draw_scene.cpp.o
  /usr/include/c++/13/cerrno
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
+ /usr/include/c++/13/compare
  /usr/include/c++/13/cstdio
  /usr/include/c++/13/cstdlib
  /usr/include/c++/13/cstring
@@ -283,6 +285,7 @@ TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o
  /usr/include/asm-generic/posix_types.h
  /usr/include/asm-generic/types.h
  /usr/include/assert.h
+ /usr/include/c++/13/array
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bits/alloc_traits.h
  /usr/include/c++/13/bits/allocator.h
@@ -346,6 +349,7 @@ TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o
  /usr/include/c++/13/cerrno
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
+ /usr/include/c++/13/compare
  /usr/include/c++/13/cstdio
  /usr/include/c++/13/cstdlib
  /usr/include/c++/13/cstring
@@ -716,6 +720,7 @@ TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
+ /usr/include/c++/13/array
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bits/alloc_traits.h
  /usr/include/c++/13/bits/allocator.h
@@ -774,6 +779,7 @@ TD01/CMakeFiles/TD01_ex01.dir/utils.cpp.o
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
  /usr/include/c++/13/clocale
+ /usr/include/c++/13/compare
  /usr/include/c++/13/cstdio
  /usr/include/c++/13/cstdlib
  /usr/include/c++/13/cwchar

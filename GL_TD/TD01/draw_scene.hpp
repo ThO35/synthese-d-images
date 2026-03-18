@@ -9,16 +9,16 @@
 #include "tools/shaders.hpp"
 #include "tools/stb_image.h"
 #include "utils.hpp"
-
+#include <array>
 using namespace glbasimac;
 
 /* Camera parameters and functions */
 static const float Z_NEAR{0.1f};
 static const float Z_FAR{500.f};
-extern Vector3D pos_camera;     // Position of the camera
-extern float angle_horizontal;  // Angle between x axis and viewpoint
-extern float angle_vertical;    // Angle between z axis and viewpoint
-extern float speed;             // Camera movement speed
+extern Vector3D pos_camera;    // Position of the camera
+extern float angle_horizontal; // Angle between x axis and viewpoint
+extern float angle_vertical;   // Angle between z axis and viewpoint
+extern float speed;            // Camera movement speed
 
 /* OpenGL Engine */
 extern GLBI_Engine myEngine;

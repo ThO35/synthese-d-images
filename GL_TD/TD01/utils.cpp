@@ -60,8 +60,10 @@ float tree_hauteur(int i, int j)
     return average(point_adjacent);
 }
 
-void add_points(float x, float y, float h, float u, float v, std::vector<float> &points, std::vector<float> &colors, std::vector<float> &uvs, std::vector<float> &normals)
+void add_points(float x, float y, float h, float u, float v, std::vector<float> &points, std::vector<float> &colors, std::vector<float> &uvs, std::vector<float> &normals, bool isTree)
 {
+    if (isTree)
+        zeroPosition.push_back({-(length / 2) + x, -(width / 2) + y, hauteur(h), (float)7 + (rand() % 14), (float)rand()});
     points.insert(points.end(), {-(length / 2) + x, -(width / 2) + y, hauteur(h)});
     float nx = ((tree_hauteur(x - 1, y) - tree_hauteur(x + 1, y)) * scaling) / (2. * Sp);
     float ny = ((tree_hauteur(x, y - 1) - tree_hauteur(x, y + 1)) * scaling) / (2. * Sp);

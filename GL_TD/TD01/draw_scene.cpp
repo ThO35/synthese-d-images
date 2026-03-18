@@ -4,10 +4,10 @@
 const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
 
 // Camera parameters
-Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0);	// Position of the camera
-float angle_horizontal{0.0}; 						// Angle between x axis and viewpoint
-float angle_vertical{0.0};	 						// Angle between z axis and viewpoint
-float speed{5.0};									// Camera movement speed
+Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0); // Position of the camera
+float angle_horizontal{0.0};					 // Angle between x axis and viewpoint
+float angle_vertical{0.0};						 // Angle between z axis and viewpoint
+float speed{1.0};								 // Camera movement speed
 
 std::vector<float> points{};
 
@@ -19,6 +19,8 @@ STP3D::IndexedMesh *cube;
 
 GLBI_Texture herbeTexture;
 float Sp = 1.0f;
+
+std::vector<std::array<float, 5>> zeroPosition = {};
 
 void initTerrain()
 {
@@ -38,16 +40,23 @@ void initTerrain()
 			float h_B = donnes[coord_B] == 0 ? tree_hauteur(i, j + 1) : static_cast<float>(static_cast<unsigned char>(donnes[coord_B]));
 			float h_C = donnes[coord_C] == 0 ? tree_hauteur(i + 1, j) : static_cast<float>(static_cast<unsigned char>(donnes[coord_C]));
 			float h_D = donnes[coord_D] == 0 ? tree_hauteur(i + 1, j + 1) : static_cast<float>(static_cast<unsigned char>(donnes[coord_D]));
-			
+
 			int value = rand() % 4;
 			// Triangle 1 (A, B, D)
-			add_points(i,     j,     h_A, UVS[value][0],           UVS[value][1],           points, colors, uvs, normals);
-			add_points(i,     j + 1, h_B, UVS[(value + 1) % 4][0], UVS[(value + 1) % 4][1], points, colors, uvs, normals);
+			if (donnes[coord_A] == 0)
+			{
+				add_points(i, j, h_A, UVS[value][0], UVS[value][1], points, colors, uvs, normals, true);
+			}
+			else
+			{
+				add_points(i, j, h_A, UVS[value][0], UVS[value][1], points, colors, uvs, normals);
+			}
+			add_points(i, j + 1, h_B, UVS[(value + 1) % 4][0], UVS[(value + 1) % 4][1], points, colors, uvs, normals);
 			add_points(i + 1, j + 1, h_D, UVS[(value + 2) % 4][0], UVS[(value + 2) % 4][1], points, colors, uvs, normals);
 
 			// Triangle 2 (A, C, D)
-			add_points(i,     j,     h_A, UVS[value][0],           UVS[value][1],           points, colors, uvs, normals);
-			add_points(i + 1, j,     h_C, UVS[(value + 3) % 4][0], UVS[(value + 3) % 4][1], points, colors, uvs, normals);
+			add_points(i, j, h_A, UVS[value][0], UVS[value][1], points, colors, uvs, normals);
+			add_points(i + 1, j, h_C, UVS[(value + 3) % 4][0], UVS[(value + 3) % 4][1], points, colors, uvs, normals);
 			add_points(i + 1, j + 1, h_D, UVS[(value + 2) % 4][0], UVS[(value + 2) % 4][1], points, colors, uvs, normals);
 		}
 	}
@@ -112,54 +121,51 @@ void drawFrame()
 	base.drawSet();
 }
 
-void leaf_minecraf(int taille)
+void leaf_minecraf(int sizeTree, int seed)
 {
-
-	int rayonMax = (taille / 6) + 1;
-	int leaf_start = taille / 2;
-	myEngine.setFlatColor(0.0, 0.0, 1.);
-	for (auto z = leaf_start; z <= taille + 2; z++)
+	srand(seed);
+	float cubeSize = 0.5f;
+	float rayon = (sizeTree / 4.0f) + 1.0f;
+	myEngine.setFlatColor(1, 0.0, 0.);
+	for (int z = -rayon; z <= rayon; z++)
 	{
-
-		auto couche = (taille + 2) - z;
-		auto rayonCouche = (couche < 2) ? (rayonMax - 1) : rayonMax;
-
-		if (z == taille + 2)
-			rayonCouche = 0;
-
-		for (auto x = -rayonCouche; x <= rayonCouche; x++)
+		for (int x = -rayon; x <= rayon; x++)
 		{
-			for (auto y = -rayonCouche; y <= rayonCouche; y++)
+			for (int y = -rayon; y <= rayon; y++)
 			{
-				if (x == 0 && y == 0 && z < taille)
-					continue;
-				myEngine.mvMatrixStack.pushMatrix();
-				myEngine.mvMatrixStack.addTranslation({x * 0.5f, y * 0.5f, z * 0.5f});
-				myEngine.updateMvMatrix();
-				cube->draw();
-				myEngine.mvMatrixStack.popMatrix();
+				float distSq = x * x + y * y + z * z;
+
+				if (distSq < rayon * rayon)
+				{
+					if (rand() % 15 > 5)
+					{
+						myEngine.mvMatrixStack.pushMatrix();
+						myEngine.mvMatrixStack.addTranslation({x * cubeSize,
+															   y * cubeSize,
+															   (sizeTree + z) * cubeSize});
+						myEngine.updateMvMatrix();
+						cube->draw();
+						myEngine.mvMatrixStack.popMatrix();
+					}
+				}
 			}
 		}
 	}
 }
 
-void tree_minecraft(int taille)
+void tree_minecraft(int hauteur, int seed)
 {
-
-	myEngine.setFlatColor(1, 0.0, 0.0);
-	for (auto i = 0; i < taille; i++)
+	float cubeSize = 0.5f;
+	myEngine.setFlatColor(0., 0., 1);
+	for (int i = 0; i < hauteur; i++)
 	{
 		myEngine.mvMatrixStack.pushMatrix();
-		myEngine.mvMatrixStack.addTranslation({0., 0., 0.5f});
+		myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, i * cubeSize});
 		myEngine.updateMvMatrix();
 		cube->draw();
-	}
-
-	for (auto i = 0; i < taille; i++)
-	{
 		myEngine.mvMatrixStack.popMatrix();
 	}
-	leaf_minecraf(taille);
+	leaf_minecraf(hauteur, seed);
 }
 
 void drawScene()
@@ -187,7 +193,15 @@ void drawScene()
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 
-	tree_minecraft(10);
+	for (const auto &zero : zeroPosition)
+	{
+		myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addTranslation(STP3D::Vector3D(zero[0], zero[1], zero[2]));
+
+		myEngine.updateMvMatrix();
+		tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
+		myEngine.mvMatrixStack.popMatrix();
+	}
 }
 
 void update_altitude()

@@ -211,6 +211,7 @@ TD01/CMakeFiles/TD01_ex01.dir/ex01.cpp.o: \
  /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/tools/stb_image.h \
  /usr/include/c++/13/stdlib.h \
  /home/tomasz/Git/synthese-d-images/GL_TD/TD01/utils.hpp \
+ /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \

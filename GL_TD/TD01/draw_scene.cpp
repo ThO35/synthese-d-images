@@ -16,8 +16,13 @@ STP3D::StandardMesh grass;
 GLBI_Convex_2D_Shape ground{3};
 GLBI_Set_Of_Points base{3};
 STP3D::IndexedMesh *cube;
+STP3D::IndexedMesh *sphere;
+STP3D::IndexedMesh *cylindre;
+STP3D::StandardMesh *cone;
 
 GLBI_Texture herbeTexture;
+GLBI_Texture leaf;
+GLBI_Texture wood;
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
@@ -72,6 +77,12 @@ void initTerrain()
 
 void initScene()
 {
+
+	cone = basicCone(1, 1);
+	cylindre = basicCylinder(1., .5, 100);
+	cylindre->createVAO();
+	sphere = basicSphere(1);
+	sphere->createVAO();
 	cube = basicCube(0.5);
 	cube->createVAO();
 	std::vector<float> baseCarre{-10.0, -10.0, 0.0,
@@ -114,6 +125,30 @@ void initScene()
 	herbeTexture.loadImage(width_texture, height_texture, n, pixels);
 	herbeTexture.detachTexture();
 	stbi_image_free(pixels);
+
+	pixels = stbi_load("../assets/textures/images.jpg", &width_texture, &height_texture, &n, 0);
+	if (pixels == nullptr)
+	{
+		std::cout << "Debilus" << std::endl;
+	}
+	leaf.createTexture();
+	leaf.attachTexture();
+	leaf.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	leaf.loadImage(width_texture, height_texture, n, pixels);
+	leaf.detachTexture();
+	stbi_image_free(pixels);
+
+	pixels = stbi_load("../assets/textures/wood.jpg", &width_texture, &height_texture, &n, 0);
+	if (pixels == nullptr)
+	{
+		std::cout << "Debilus" << std::endl;
+	}
+	wood.createTexture();
+	wood.attachTexture();
+	wood.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	wood.loadImage(width_texture, height_texture, n, pixels);
+	wood.detachTexture();
+	stbi_image_free(pixels);
 }
 
 void drawFrame()
@@ -155,6 +190,9 @@ void leaf_minecraf(int sizeTree, int seed)
 
 void tree_minecraft(int hauteur, int seed)
 {
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.activateTexturing(true);
+	wood.attachTexture();
 	float cubeSize = 0.5f;
 	myEngine.setFlatColor(0., 0., 1);
 	for (int i = 0; i < hauteur; i++)
@@ -165,14 +203,86 @@ void tree_minecraft(int hauteur, int seed)
 		cube->draw();
 		myEngine.mvMatrixStack.popMatrix();
 	}
+	wood.detachTexture();
+	myEngine.activateTexturing(false);
+	myEngine.mvMatrixStack.popMatrix();
+
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.activateTexturing(true);
+	leaf.attachTexture();
 	leaf_minecraf(hauteur, seed);
+	leaf.detachTexture();
+	myEngine.activateTexturing(false);
+	myEngine.mvMatrixStack.popMatrix();
+}
+
+void moon()
+{
+
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.setFlatColor(255, 255, 0);
+	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
+	myEngine.mvMatrixStack.addTranslation({1, 1, -length});
+	myEngine.updateMvMatrix();
+	sphere->draw();
+	myEngine.mvMatrixStack.popMatrix();
+}
+void sun()
+{
+
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.setFlatColor(255, 255, 0);
+	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
+	myEngine.mvMatrixStack.addTranslation({1, 1, length});
+	myEngine.updateMvMatrix();
+	sphere->draw();
+	myEngine.mvMatrixStack.popMatrix();
+}
+
+void sapin()
+{
+
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.setFlatColor(0., 0., 1);
+	myEngine.mvMatrixStack.addRotation(M_PI / 2, {1., 0., 0.});
+	myEngine.mvMatrixStack.addHomothety({1., 3., 1.});
+	myEngine.updateMvMatrix();
+	cylindre->draw();
+	cone->draw();
+	myEngine.mvMatrixStack.popMatrix();
+
+	// myEngine.mvMatrixStack.pushMatrix();
+	// myEngine.setFlatColor(1., 0, 0);
+	// myEngine.mvMatrixStack.addTranslation({0., 0., 3.});
+	// myEngine.mvMatrixStack.addHomothety(0.5);
+	// myEngine.updateMvMatrix();
+	// sphere->draw();
+	// myEngine.mvMatrixStack.popMatrix();
+
+	// auto j = 0.25;
+	//  for (int i = 0; i < 5; i++)
+	//  {
+	//  	myEngine.setFlatColor(1., 0., 1);
+	//  	myEngine.mvMatrixStack.pushMatrix();
+	//  	myEngine.mvMatrixStack.addTranslation({1., 1., float(1 - j)});
+	//  	myEngine.mvMatrixStack.addHomothety({1. * j, 1. * j, 0.5});
+	//  	myEngine.updateMvMatrix();
+	//  	sphere->draw();
+	//  	myEngine.mvMatrixStack.popMatrix();
+	//  	j += 0.5;
+	//  }
 }
 
 void drawScene()
 {
+
+	moon();
+	sun();
+
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
 	herbeTexture.attachTexture();
+	myEngine.updateMvMatrix();
 	grass.draw();
 	herbeTexture.detachTexture();
 	myEngine.activateTexturing(false);
@@ -192,6 +302,7 @@ void drawScene()
 	herbeTexture.detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
+	sapin();
 
 	for (const auto &zero : zeroPosition)
 	{

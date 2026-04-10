@@ -23,6 +23,7 @@ STP3D::StandardMesh *cone;
 GLBI_Texture herbeTexture;
 GLBI_Texture leaf;
 GLBI_Texture wood;
+GLBI_Texture liveStar;
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
@@ -149,6 +150,18 @@ void initScene()
 	wood.loadImage(width_texture, height_texture, n, pixels);
 	wood.detachTexture();
 	stbi_image_free(pixels);
+
+	pixels = stbi_load("../assets/textures/moon.png", &width_texture, &height_texture, &n, 0);
+	if (pixels == nullptr)
+	{
+		std::cout << "Debilus" << std::endl;
+	}
+	liveStar.createTexture();
+	liveStar.attachTexture();
+	liveStar.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	liveStar.loadImage(width_texture, height_texture, n, pixels);
+	liveStar.detachTexture();
+	stbi_image_free(pixels);
 }
 
 void drawFrame()
@@ -220,11 +233,15 @@ void moon()
 {
 
 	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.activateTexturing(true);
+	liveStar.attachTexture();
 	myEngine.setFlatColor(255, 255, 0);
 	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
 	myEngine.mvMatrixStack.addTranslation({1, 1, -length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
+	liveStar.detachTexture();
+	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 }
 void sun()

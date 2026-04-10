@@ -79,6 +79,11 @@ void initTerrain()
 void initScene()
 {
 
+	myEngine.switchToPhongShading();
+	myEngine.setLightPosition(Vector4D{0, 0, 0, 0}, 0);
+	myEngine.setLightIntensity(Vector3D{100, 100, 100});
+	myEngine.switchToFlatShading();
+
 	cone = basicCone(1, 1);
 	cylindre = basicCylinder(1., .5, 100);
 	cylindre->createVAO();
@@ -231,28 +236,42 @@ void tree_minecraft(int hauteur, int seed)
 
 void moon()
 {
-
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
 	liveStar.attachTexture();
-	myEngine.setFlatColor(255, 255, 0);
+	myEngine.setFlatColor(1.0f, 1.0f, 0.0f);
+
 	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
-	myEngine.mvMatrixStack.addTranslation({1, 1, -length});
+	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, -length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
 	liveStar.detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 }
+
 void sun()
 {
-
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.setFlatColor(255, 255, 0);
-	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
-	myEngine.mvMatrixStack.addTranslation({1, 1, length});
+
+	float angle = (M_PI / 180.0f) * glfwGetTime();
+
+	myEngine.switchToPhongShading();
+
+	float lightY = length * std::sin(angle);
+	float lightZ = length * std::cos(angle);
+
+	myEngine.setLightPosition(STP3D::Vector4D(0.0f, lightY, lightZ, 0.0f), 0);
+	myEngine.setLightIntensity(STP3D::Vector3D(1.0f, 1.0f, 1.0f), 0);
+
+	myEngine.switchToFlatShading();
+
+	myEngine.setFlatColor(1.0f, 1.0f, 0.0f);
+	myEngine.mvMatrixStack.addRotation(angle, {1.0f, 0.0f, 0.0f});
+	myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
+
 	myEngine.mvMatrixStack.popMatrix();
 }
 
@@ -295,6 +314,7 @@ void drawScene()
 
 	moon();
 	sun();
+	myEngine.switchToPhongShading();
 
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
@@ -312,6 +332,7 @@ void drawScene()
 
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.setFlatColor(0.2, 0.0, 0.0);
+
 	myEngine.activateTexturing(true);
 	herbeTexture.attachTexture();
 	myEngine.updateMvMatrix();
@@ -330,6 +351,8 @@ void drawScene()
 		tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
 		myEngine.mvMatrixStack.popMatrix();
 	}
+
+	myEngine.switchToFlatShading();
 }
 
 void update_altitude()

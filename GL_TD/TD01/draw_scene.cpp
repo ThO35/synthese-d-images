@@ -80,8 +80,9 @@ void initScene()
 {
 
 	myEngine.switchToPhongShading();
-	myEngine.setLightPosition(Vector4D{0, 0, 0, 0}, 0);
-	myEngine.setLightIntensity(Vector3D{100, 100, 100});
+	myEngine.setLightPosition(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, 0);
+	myEngine.setLightIntensity(STP3D::Vector3D{100.0f, 100.0f, 100.0f}, 0);
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
 	myEngine.switchToFlatShading();
 
 	cone = basicCone(1, 1);
@@ -237,11 +238,22 @@ void tree_minecraft(int hauteur, int seed)
 void moon()
 {
 	myEngine.mvMatrixStack.pushMatrix();
+
+	auto angle = ((M_PI / 180.0f) * glfwGetTime() * 15) + M_PI;
+
+	myEngine.switchToPhongShading();
+
+	auto lightY = length * std::sin(-angle);
+	auto lightZ = length * std::cos(-angle);
+
+	myEngine.setLightPosition(STP3D::Vector4D(0.0f, lightY, lightZ, 0.0f), 1);
+	myEngine.setLightIntensity(STP3D::Vector3D(0.25f, 0.25f, 0.113f), 1);
+
+	myEngine.switchToFlatShading();
+
 	myEngine.activateTexturing(true);
 	liveStar.attachTexture();
-	myEngine.setFlatColor(1.0f, 1.0f, 0.0f);
-
-	myEngine.mvMatrixStack.addRotation((M_PI / 180) * (glfwGetTime()), {1, 0, 0});
+	myEngine.mvMatrixStack.addRotation(angle, {1, 0, 0});
 	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, -length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
@@ -254,12 +266,12 @@ void sun()
 {
 	myEngine.mvMatrixStack.pushMatrix();
 
-	float angle = (M_PI / 180.0f) * glfwGetTime();
+	float angle = (M_PI / 180.0f) * glfwGetTime() * 15;
 
 	myEngine.switchToPhongShading();
 
-	float lightY = length * std::sin(angle);
-	float lightZ = length * std::cos(angle);
+	float lightY = length * std::sin(-angle);
+	float lightZ = length * std::cos(-angle);
 
 	myEngine.setLightPosition(STP3D::Vector4D(0.0f, lightY, lightZ, 0.0f), 0);
 	myEngine.setLightIntensity(STP3D::Vector3D(1.0f, 1.0f, 1.0f), 0);

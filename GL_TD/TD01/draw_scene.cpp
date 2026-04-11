@@ -1,4 +1,5 @@
 #include "draw_scene.hpp"
+#include "spline.hpp"
 
 // Order UVs
 const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
@@ -10,6 +11,13 @@ float angle_vertical{0.0};						 // Angle between z axis and viewpoint
 float speed{1.0};								 // Camera movement speed
 
 std::vector<float> points{};
+Spline trajectory({
+		{0, 0, 50},
+		{50, 50, 100},
+		{0, 100, 150},
+		{-50, 50, 200},
+		{0, 0, 50}
+	});
 
 GLBI_Engine myEngine;
 STP3D::StandardMesh grass;
@@ -321,6 +329,43 @@ void sapin()
 	//  }
 }
 
+
+void draw_tmp()
+{
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.mvMatrixStack.addTranslation({0.0f, 10.f, 0.f});
+			myEngine.setFlatColor(0.0f, 1.0f, 0.0f);
+			myEngine.updateMvMatrix();
+			sphere->draw();
+		myEngine.mvMatrixStack.popMatrix();
+		myEngine.setFlatColor(0.0f, 1.0f, 1.0f);
+		myEngine.updateMvMatrix();
+		sphere->draw();
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.mvMatrixStack.addTranslation({0.0f, -10.f, 0.f});
+			myEngine.setFlatColor(0.0f, 0.0f, 1.0f);
+			myEngine.updateMvMatrix();
+			sphere->draw();
+		myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.popMatrix();
+}
+
+
+void show_trajectory()
+{
+	for (; !trajectory.simule(0.01f); )
+	{
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.mvMatrixStack.addTranslation(trajectory.getSimulPosition());
+			myEngine.mvMatrixStack.addHomothety({0.2f, 0.2f, 0.2f});
+			myEngine.updateMvMatrix();
+			sphere->draw();
+			// sapin();
+		myEngine.mvMatrixStack.popMatrix();
+	}
+}
+
 void drawScene()
 {
 
@@ -352,7 +397,7 @@ void drawScene()
 	herbeTexture.detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
-	sapin();
+	//sapin();
 
 	for (const auto &zero : zeroPosition)
 	{
@@ -365,6 +410,17 @@ void drawScene()
 	}
 
 	myEngine.switchToFlatShading();
+
+	show_trajectory();
+
+	myEngine.mvMatrixStack.pushMatrix();
+		trajectory.update(0.01f);
+		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
+		myEngine.mvMatrixStack.addRotation(trajectory.getYaw(), {0.0f, 1.0f, 0.0f});
+		myEngine.mvMatrixStack.addRotation(trajectory.getPitch(), {1.0f, 0.0f, 0.0f});
+		myEngine.updateMvMatrix();
+		draw_tmp();
+	myEngine.mvMatrixStack.popMatrix();
 }
 
 void update_altitude()

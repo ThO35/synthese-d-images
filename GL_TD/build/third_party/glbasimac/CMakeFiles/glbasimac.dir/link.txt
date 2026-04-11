@@ -1,2 +1,0 @@
-/usr/bin/ar qc libglbasimac.a CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o
-/usr/bin/ranlib libglbasimac.a

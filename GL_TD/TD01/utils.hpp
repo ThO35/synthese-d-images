@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include "tools/vector3d.hpp"
 
 extern unsigned char minVal;
 extern int length, width;

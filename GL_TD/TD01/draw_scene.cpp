@@ -27,6 +27,7 @@ STP3D::IndexedMesh *cube;
 STP3D::IndexedMesh *sphere;
 STP3D::IndexedMesh *cylindre;
 STP3D::StandardMesh *cone;
+STP3D::StandardMesh *repere;
 
 GLBI_Texture herbeTexture;
 GLBI_Texture leaf;
@@ -98,8 +99,10 @@ void initScene()
 	cylindre->createVAO();
 	sphere = basicSphere(1);
 	sphere->createVAO();
-	cube = basicCube(0.5);
+	cube = basicCube(1.0);
 	cube->createVAO();
+	repere = createRepere(10);
+	repere->createVAO();
 	std::vector<float> baseCarre{-10.0, -10.0, 0.0,
 								 10.0, -10.0, 0.0,
 								 10.0, 10.0, 0.0,
@@ -186,7 +189,7 @@ void drawFrame()
 void leaf_minecraf(int sizeTree, int seed)
 {
 	srand(seed);
-	float cubeSize = 0.5f;
+	float cubeSize = 1.0f;
 	float rayon = (sizeTree / 4.0f) + 1.0f;
 	myEngine.setFlatColor(1, 0.0, 0.);
 	for (int z = -rayon; z <= rayon; z++)
@@ -220,7 +223,7 @@ void tree_minecraft(int hauteur, int seed)
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
 	wood.attachTexture();
-	float cubeSize = 0.5f;
+	float cubeSize = 1.0f;
 	myEngine.setFlatColor(0., 0., 1);
 	for (int i = 0; i < hauteur; i++)
 	{
@@ -411,6 +414,7 @@ void drawScene()
 
 	myEngine.switchToFlatShading();
 
+	/*
 	show_trajectory();
 
 	myEngine.mvMatrixStack.pushMatrix();
@@ -421,6 +425,12 @@ void drawScene()
 		myEngine.updateMvMatrix();
 		draw_tmp();
 	myEngine.mvMatrixStack.popMatrix();
+	*/
+	
+	myEngine.mvMatrixStack.pushMatrix();
+        myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
+        myEngine.updateMvMatrix();
+    myEngine.mvMatrixStack.popMatrix();
 }
 
 void update_altitude()

@@ -33,7 +33,7 @@ set(ALL_LIBRARIES ${ALL_LIBRARIES} glbasimac)
 include_directories(third_party/glbasimac/)
 set(CMAKE_COLOR_MAKEFILE ON)
 
-file(GLOB TD_DIRECTORIES "TD*")
+file(GLOB TD_DIRECTORIES "src")
 
 foreach(TD ${TD_DIRECTORIES})
     add_subdirectory(${TD})

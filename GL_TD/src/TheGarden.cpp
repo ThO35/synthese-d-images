@@ -19,7 +19,7 @@ GLBI_Texture myTexture;
 /* Window properties */
 static const unsigned int WINDOW_WIDTH = 1200;
 static const unsigned int WINDOW_HEIGHT = 800;
-static const char WINDOW_TITLE[] = "TD05 Ex01";
+static const char WINDOW_TITLE[] = "The Garden";
 static float aspectRatio = 1.0f;
 
 /* Minimal time wanted between two images */

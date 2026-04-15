@@ -1,3 +1,5 @@
+#include <unordered_map>
+
 #include "draw_scene.hpp"
 #include "spline.hpp"
 #include "sandBird.hpp"
@@ -24,42 +26,50 @@ Spline trajectory({
 	{0, 0, 20}
 });
 
-/*
-// Exemple looping
-Spline trajectory({
-	{0, 0, 20},
-	{100, 50, 25},
-	{0, 100, 30},
-	{-100, 50, 35},
-	{0, 0, 40},
-	{75, 0, 90},
-	{0, 0, 140},
-	{-75, 0, 90},
-	{0, 0, 40},
-	{100, -50, 35},
-	{0, -100, 30},
-	{-100, -50, 25},
-	{0, 0, 20}
-});
-*/
 GLBI_Engine myEngine;
+std::unordered_map<std::string, GLBI_Texture> textures;
+
 STP3D::StandardMesh grass;
 GLBI_Convex_2D_Shape ground{3};
-GLBI_Set_Of_Points base{3};
+STP3D::StandardMesh *repere;
 STP3D::IndexedMesh *cube;
 STP3D::IndexedMesh *sphere;
 STP3D::IndexedMesh *cylindre;
 STP3D::StandardMesh *cone;
-STP3D::StandardMesh *repere;
 
-GLBI_Texture herbeTexture;
-GLBI_Texture leaf;
-GLBI_Texture wood;
-GLBI_Texture liveStar;
-GLBI_Texture sand;
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
+
+
+
+void initTextures()
+{
+	glActiveTexture(GL_TEXTURE0);
+	auto init_texture = [](const char *path, const char *name)
+	{
+		int width_texture, height_texture, n;
+		GLBI_Texture tmp_texture;
+		auto pixels = stbi_load(path, &width_texture, &height_texture, &n, 0);
+		if (pixels == nullptr)
+		{
+			std::cout << "Debilus - " << name << std::endl;
+		}
+		tmp_texture.createTexture();
+		tmp_texture.attachTexture();
+		tmp_texture.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		tmp_texture.loadImage(width_texture, height_texture, n, pixels);
+		tmp_texture.detachTexture();
+		stbi_image_free(pixels);
+		textures[name] = std::move(tmp_texture);
+	};
+	init_texture("../assets/textures/herbe.png", "grass");
+	init_texture("../assets/textures/leaf.jpg",  "leaf");
+	init_texture("../assets/textures/wood.jpg",  "wood");
+	init_texture("../assets/textures/moon.png",  "liveStar");
+	init_texture("../assets/textures/sand.png",  "sand");
+}
+
 
 void initTerrain()
 {
@@ -111,12 +121,12 @@ void initTerrain()
 
 void initScene()
 {
-
 	myEngine.switchToPhongShading();
 	myEngine.setLightPosition(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, 0);
 	myEngine.setLightIntensity(STP3D::Vector3D{100.0f, 100.0f, 100.0f}, 0);
 	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
 	myEngine.switchToFlatShading();
+	initTextures();
 
 	cone = basicCone(1, 1);
 	cylindre = basicCylinder(1., .5, 100);
@@ -127,99 +137,8 @@ void initScene()
 	cube->createVAO();
 	repere = createRepere(10);
 	repere->createVAO();
-	std::vector<float> baseCarre{-10.0, -10.0, 0.0,
-								 10.0, -10.0, 0.0,
-								 10.0, 10.0, 0.0,
-								 -10.0, 10.0, 0.0};
-	ground.initShape(baseCarre);
-	ground.changeNature(GL_TRIANGLE_FAN);
-
-	std::vector<float> pointsBase{0.0, 0.0, 0.0,
-								  10.0, 0.0, 0.0,
-								  0.0, 0.0, 0.0,
-								  0.0, 10.0, 0.0,
-								  0.0, 0.0, 0.0,
-								  0.0, 0.0, 10.0};
-	std::vector<float> color{1.0, 0.0, 0.0,
-							 1.0, 0.0, 0.0,
-							 0.0, 1.0, 0.0,
-							 0.0, 1.0, 0.0,
-							 0.0, 0.0, 1.0,
-							 0.0, 0.0, 1.0};
-
-	base.initSet(pointsBase, color);
-	base.changeNature(GL_LINES);
 
 	initTerrain();
-
-	glActiveTexture(GL_TEXTURE0);
-
-	int width_texture, height_texture, n;
-
-	auto pixels = stbi_load("../assets/textures/herbe.png", &width_texture, &height_texture, &n, 0);
-	if (pixels == nullptr)
-	{
-		std::cout << "Debilus" << std::endl;
-	}
-	herbeTexture.createTexture();
-	herbeTexture.attachTexture();
-	herbeTexture.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	herbeTexture.loadImage(width_texture, height_texture, n, pixels);
-	herbeTexture.detachTexture();
-	stbi_image_free(pixels);
-
-	pixels = stbi_load("../assets/textures/images.jpg", &width_texture, &height_texture, &n, 0);
-	if (pixels == nullptr)
-	{
-		std::cout << "Debilus" << std::endl;
-	}
-	leaf.createTexture();
-	leaf.attachTexture();
-	leaf.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	leaf.loadImage(width_texture, height_texture, n, pixels);
-	leaf.detachTexture();
-	stbi_image_free(pixels);
-
-	pixels = stbi_load("../assets/textures/wood.jpg", &width_texture, &height_texture, &n, 0);
-	if (pixels == nullptr)
-	{
-		std::cout << "Debilus" << std::endl;
-	}
-	wood.createTexture();
-	wood.attachTexture();
-	wood.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	wood.loadImage(width_texture, height_texture, n, pixels);
-	wood.detachTexture();
-	stbi_image_free(pixels);
-
-	pixels = stbi_load("../assets/textures/moon.png", &width_texture, &height_texture, &n, 0);
-	if (pixels == nullptr)
-	{
-		std::cout << "Debilus" << std::endl;
-	}
-	liveStar.createTexture();
-	liveStar.attachTexture();
-	liveStar.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	liveStar.loadImage(width_texture, height_texture, n, pixels);
-	liveStar.detachTexture();
-	stbi_image_free(pixels);
-
-	pixels = stbi_load("../assets/textures/sand.png", &width_texture, &height_texture, &n, 0);
-	if (pixels == nullptr)
-	{
-		std::cout << "Debilus" << std::endl;
-	}
-	sand.createTexture();
-	sand.attachTexture();
-	sand.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	sand.loadImage(width_texture, height_texture, n, pixels);
-	sand.detachTexture();
-	stbi_image_free(pixels);
-}
-
-void drawFrame()
-{
-	base.drawSet();
 }
 
 void leaf_minecraf(int sizeTree, int seed)
@@ -258,7 +177,7 @@ void tree_minecraft(int hauteur, int seed)
 {
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
-	wood.attachTexture();
+	textures["wood"].attachTexture();
 	float cubeSize = 1.0f;
 	myEngine.setFlatColor(0., 0., 1);
 	for (int i = 0; i < hauteur; i++)
@@ -269,15 +188,15 @@ void tree_minecraft(int hauteur, int seed)
 		cube->draw();
 		myEngine.mvMatrixStack.popMatrix();
 	}
-	wood.detachTexture();
+	textures["wood"].detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.activateTexturing(true);
-	leaf.attachTexture();
+	textures["leaf"].attachTexture();
 	leaf_minecraf(hauteur, seed);
-	leaf.detachTexture();
+	textures["leaf"].detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 }
@@ -299,12 +218,12 @@ void moon()
 	myEngine.switchToFlatShading();
 
 	myEngine.activateTexturing(true);
-	liveStar.attachTexture();
+	textures["liveStar"].attachTexture();
 	myEngine.mvMatrixStack.addRotation(angle, {1, 0, 0});
 	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, -length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
-	liveStar.detachTexture();
+	textures["liveStar"].detachTexture();
 	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 }
@@ -371,7 +290,7 @@ void sapin()
 
 void show_trajectory()
 {
-	for (; !trajectory.simule(0.01f); )
+	for (; !trajectory.simule(0.05f); )
 	{
 		myEngine.mvMatrixStack.pushMatrix();
 			myEngine.mvMatrixStack.addTranslation(trajectory.getSimulPosition());
@@ -390,28 +309,12 @@ void drawScene()
 	myEngine.switchToPhongShading();
 
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.activateTexturing(true);
-	herbeTexture.attachTexture();
-	myEngine.updateMvMatrix();
-	grass.draw();
-	herbeTexture.detachTexture();
-	myEngine.activateTexturing(false);
-	myEngine.mvMatrixStack.popMatrix();
-
-	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.updateMvMatrix();
-	drawFrame();
-	myEngine.mvMatrixStack.popMatrix();
-
-	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.setFlatColor(0.2, 0.0, 0.0);
-
-	myEngine.activateTexturing(true);
-	herbeTexture.attachTexture();
-	myEngine.updateMvMatrix();
-	ground.drawShape();
-	herbeTexture.detachTexture();
-	myEngine.activateTexturing(false);
+		myEngine.activateTexturing(true);
+		textures["grass"].attachTexture();
+		myEngine.updateMvMatrix();
+		grass.draw();
+		textures["grass"].detachTexture();
+		myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 	//sapin();
 
@@ -426,7 +329,7 @@ void drawScene()
 	}
 
 
-
+	/* Pas touche !!!
 	myEngine.mvMatrixStack.pushMatrix();
 		trajectory.update(0.001f);
 		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
@@ -434,12 +337,13 @@ void drawScene()
 		myEngine.mvMatrixStack.addRotation(-trajectory.getElevation(), {0.0f, 1.0f, 0.0f});
 		myEngine.mvMatrixStack.pushMatrix();
 			myEngine.activateTexturing(true);
-			sand.attachTexture();
+			textures["sand"].attachTexture();
 			drawSandBird();
-			sand.detachTexture();
+			textures["sand"].detachTexture();
 			myEngine.activateTexturing(false);
 		myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.popMatrix();
+	*/
 
 	myEngine.switchToFlatShading();
 

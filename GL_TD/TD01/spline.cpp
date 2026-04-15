@@ -26,8 +26,8 @@ void Spline::update(double dist)
     auto d = _position - _last_pos;
     d.normalize();
 
-    _yaw = std::atan2(d.x, d.z);
-    _pitch = std::atan2(-d.y, std::sqrt(d.x * d.x + d.z * d.z));
+    _azimuthal = std::atan2(d.y, d.x);
+    _elevation = std::atan2(d.z, std::sqrt(d.x * d.x + d.y * d.y));
 }
 
 bool Spline::simule(double dist)

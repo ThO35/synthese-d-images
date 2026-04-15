@@ -14,8 +14,8 @@ public:
 
     void update(double dist);
     const STP3D::Vector3D& getPosition() const { return _position; }
-    double getYaw() const { return _yaw; }
-    double getPitch() const { return _pitch; }
+    double getAzimuthal() const { return _azimuthal; }
+    double getElevation() const { return _elevation; }
 
     bool simule(double dist);
     const STP3D::Vector3D& getSimulPosition() const { return _simul_position; }
@@ -29,7 +29,7 @@ private:
     double _step = 0.0f;
     STP3D::Vector3D _position;
     STP3D::Vector3D _last_pos;
-    double _yaw, _pitch;
+    double _azimuthal, _elevation;
 
     double _simul_step = 0.0f;
     STP3D::Vector3D _simul_position;

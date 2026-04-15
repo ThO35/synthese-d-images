@@ -1,5 +1,6 @@
 #include "draw_scene.hpp"
 #include "spline.hpp"
+#include "sandBird.hpp"
 
 // Order UVs
 const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
@@ -12,13 +13,35 @@ float speed{1.0};								 // Camera movement speed
 
 std::vector<float> points{};
 Spline trajectory({
-		{0, 0, 50},
-		{50, 50, 100},
-		{0, 100, 150},
-		{-50, 50, 200},
-		{0, 0, 50}
-	});
+	{0, 0, 20},
+	{100, 50, 25},
+	{0, 100, 30},
+	{-100, 50, 35},
+	{0, 0, 40},
+	{100, -50, 35},
+	{0, -100, 30},
+	{-100, -50, 25},
+	{0, 0, 20}
+});
 
+/*
+// Exemple looping
+Spline trajectory({
+	{0, 0, 20},
+	{100, 50, 25},
+	{0, 100, 30},
+	{-100, 50, 35},
+	{0, 0, 40},
+	{75, 0, 90},
+	{0, 0, 140},
+	{-75, 0, 90},
+	{0, 0, 40},
+	{100, -50, 35},
+	{0, -100, 30},
+	{-100, -50, 25},
+	{0, 0, 20}
+});
+*/
 GLBI_Engine myEngine;
 STP3D::StandardMesh grass;
 GLBI_Convex_2D_Shape ground{3};
@@ -33,6 +56,7 @@ GLBI_Texture herbeTexture;
 GLBI_Texture leaf;
 GLBI_Texture wood;
 GLBI_Texture liveStar;
+GLBI_Texture sand;
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
@@ -178,6 +202,18 @@ void initScene()
 	liveStar.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	liveStar.loadImage(width_texture, height_texture, n, pixels);
 	liveStar.detachTexture();
+	stbi_image_free(pixels);
+
+	pixels = stbi_load("../assets/textures/sand.png", &width_texture, &height_texture, &n, 0);
+	if (pixels == nullptr)
+	{
+		std::cout << "Debilus" << std::endl;
+	}
+	sand.createTexture();
+	sand.attachTexture();
+	sand.setParameters(GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	sand.loadImage(width_texture, height_texture, n, pixels);
+	sand.detachTexture();
 	stbi_image_free(pixels);
 }
 
@@ -333,28 +369,6 @@ void sapin()
 }
 
 
-void draw_tmp()
-{
-	myEngine.mvMatrixStack.pushMatrix();
-		myEngine.mvMatrixStack.pushMatrix();
-			myEngine.mvMatrixStack.addTranslation({0.0f, 10.f, 0.f});
-			myEngine.setFlatColor(0.0f, 1.0f, 0.0f);
-			myEngine.updateMvMatrix();
-			sphere->draw();
-		myEngine.mvMatrixStack.popMatrix();
-		myEngine.setFlatColor(0.0f, 1.0f, 1.0f);
-		myEngine.updateMvMatrix();
-		sphere->draw();
-		myEngine.mvMatrixStack.pushMatrix();
-			myEngine.mvMatrixStack.addTranslation({0.0f, -10.f, 0.f});
-			myEngine.setFlatColor(0.0f, 0.0f, 1.0f);
-			myEngine.updateMvMatrix();
-			sphere->draw();
-		myEngine.mvMatrixStack.popMatrix();
-	myEngine.mvMatrixStack.popMatrix();
-}
-
-
 void show_trajectory()
 {
 	for (; !trajectory.simule(0.01f); )
@@ -364,7 +378,6 @@ void show_trajectory()
 			myEngine.mvMatrixStack.addHomothety({0.2f, 0.2f, 0.2f});
 			myEngine.updateMvMatrix();
 			sphere->draw();
-			// sapin();
 		myEngine.mvMatrixStack.popMatrix();
 	}
 }
@@ -412,25 +425,25 @@ void drawScene()
 		myEngine.mvMatrixStack.popMatrix();
 	}
 
+
+
+	myEngine.mvMatrixStack.pushMatrix();
+		trajectory.update(0.001f);
+		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
+		myEngine.mvMatrixStack.addRotation(trajectory.getAzimuthal(), {0.0f, 0.0f, 1.0f});
+		myEngine.mvMatrixStack.addRotation(-trajectory.getElevation(), {0.0f, 1.0f, 0.0f});
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.activateTexturing(true);
+			sand.attachTexture();
+			drawSandBird();
+			sand.detachTexture();
+			myEngine.activateTexturing(false);
+		myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.popMatrix();
+
 	myEngine.switchToFlatShading();
 
-	/*
 	show_trajectory();
-
-	myEngine.mvMatrixStack.pushMatrix();
-		trajectory.update(0.01f);
-		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
-		myEngine.mvMatrixStack.addRotation(trajectory.getYaw(), {0.0f, 1.0f, 0.0f});
-		myEngine.mvMatrixStack.addRotation(trajectory.getPitch(), {1.0f, 0.0f, 0.0f});
-		myEngine.updateMvMatrix();
-		draw_tmp();
-	myEngine.mvMatrixStack.popMatrix();
-	*/
-	
-	myEngine.mvMatrixStack.pushMatrix();
-        myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
-        myEngine.updateMvMatrix();
-    myEngine.mvMatrixStack.popMatrix();
 }
 
 void update_altitude()

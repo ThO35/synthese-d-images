@@ -14,17 +14,15 @@ float angle_vertical{0.0};						 // Angle between z axis and viewpoint
 float speed{1.0};								 // Camera movement speed
 
 std::vector<float> points{};
-Spline trajectory({
-	{0, 0, 20},
-	{100, 50, 25},
-	{0, 100, 30},
-	{-100, 50, 35},
-	{0, 0, 40},
-	{100, -50, 35},
-	{0, -100, 30},
-	{-100, -50, 25},
-	{0, 0, 20}
-});
+Spline trajectory({{0, 0, 20},
+				   {100, 50, 25},
+				   {0, 100, 30},
+				   {-100, 50, 35},
+				   {0, 0, 40},
+				   {100, -50, 35},
+				   {0, -100, 30},
+				   {-100, -50, 25},
+				   {0, 0, 20}});
 
 GLBI_Engine myEngine;
 std::unordered_map<std::string, GLBI_Texture> textures;
@@ -40,8 +38,6 @@ STP3D::StandardMesh *cone;
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
-
-
 
 void initTextures()
 {
@@ -64,12 +60,11 @@ void initTextures()
 		textures[name] = std::move(tmp_texture);
 	};
 	init_texture("../assets/textures/herbe.png", "grass");
-	init_texture("../assets/textures/leaf.jpg",  "leaf");
-	init_texture("../assets/textures/wood.jpg",  "wood");
-	init_texture("../assets/textures/moon.png",  "liveStar");
-	init_texture("../assets/textures/sand.png",  "sand");
+	init_texture("../assets/textures/leaf.jpg", "leaf");
+	init_texture("../assets/textures/wood.jpg", "wood");
+	init_texture("../assets/textures/moon.png", "liveStar");
+	init_texture("../assets/textures/sand.png", "sand");
 }
-
 
 void initTerrain()
 {
@@ -122,8 +117,11 @@ void initTerrain()
 void initScene()
 {
 	myEngine.switchToPhongShading();
-	myEngine.setLightPosition(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, 0);
-	myEngine.setLightIntensity(STP3D::Vector3D{100.0f, 100.0f, 100.0f}, 0);
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
 	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{100.0f, 100.0f, 100.0f});
 	myEngine.switchToFlatShading();
 	initTextures();
@@ -287,36 +285,104 @@ void sapin()
 	//  }
 }
 
-
 void show_trajectory()
 {
-	for (; !trajectory.simule(0.05f); )
+	for (; !trajectory.simule(0.05f);)
 	{
 		myEngine.mvMatrixStack.pushMatrix();
-			myEngine.mvMatrixStack.addTranslation(trajectory.getSimulPosition());
-			myEngine.mvMatrixStack.addHomothety({0.2f, 0.2f, 0.2f});
-			myEngine.updateMvMatrix();
-			sphere->draw();
+		myEngine.mvMatrixStack.addTranslation(trajectory.getSimulPosition());
+		myEngine.mvMatrixStack.addHomothety({0.2f, 0.2f, 0.2f});
+		myEngine.updateMvMatrix();
+		sphere->draw();
 		myEngine.mvMatrixStack.popMatrix();
 	}
 }
 
+void batton_de_papa()
+{
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.mvMatrixStack.addRotation(M_PI / 2, Vector3D(1.0, 0.0, 0.0));
+	myEngine.mvMatrixStack.addHomothety(Vector3D(0.1, 9, 0.1));
+	myEngine.updateMvMatrix();
+	cylindre->draw();
+	myEngine.mvMatrixStack.popMatrix();
+
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 8.99f});
+	myEngine.mvMatrixStack.addRotation(M_PI / 2.0f, {1.0f, 0.0f, 0.0f});
+	for (int i = 0; i < 24; i++)
+	{
+		myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addRotation((M_PI / 24 * 2), Vector3D(1.0, 0.0, 0.0));
+		myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addHomothety({0.1, 0.20, 0.1});
+		myEngine.updateMvMatrix();
+		cylindre->draw();
+		myEngine.mvMatrixStack.popMatrix();
+		myEngine.mvMatrixStack.addTranslation(Vector3D(0, 0.18, 0));
+	}
+	for (int i = 0; i < 24; i++)
+	{
+		myEngine.mvMatrixStack.popMatrix();
+	}
+
+	myEngine.mvMatrixStack.popMatrix();
+}
+void lantern()
+{
+	myEngine.switchToPhongShading();
+
+	auto posX = 0.0f;
+	auto posY = static_cast<float>(-(M_PI / 12.0 * 2.5) - 0.05);
+	auto posZ = 8.99;
+
+	for (auto i = 2; i < 6; i++)
+	{
+
+		auto offset = i * 2.3f;
+		auto time = glfwGetTime() * 8.0f + offset;
+		auto flicker = std::sin(time) + std::sin(time * 2.1f) * 0.5f + std::cos(time * 3.7f) * 0.25f;
+		auto intensity = 1.0f + (flicker * 0.15f);
+
+		auto r = 1.0f * intensity;
+		auto g = (0.4f + flicker * 0.1f) * intensity;
+		auto b = 0.05f * intensity;
+
+		myEngine.setLightPosition(STP3D::Vector4D(posX, posY, posZ, 1.0f), i);
+		myEngine.setLightIntensity(STP3D::Vector3D(r, g, b), i);
+	}
+
+	myEngine.switchToFlatShading();
+	myEngine.mvMatrixStack.pushMatrix();
+
+	myEngine.mvMatrixStack.addTranslation(STP3D::Vector3D(posX, posY, posZ));
+	myEngine.setFlatColor(1, 1, 1);
+	auto scaleFixe = 0.4f;
+	myEngine.mvMatrixStack.addHomothety(scaleFixe);
+	myEngine.updateMvMatrix();
+
+	sphere->draw();
+
+	myEngine.mvMatrixStack.popMatrix();
+}
 void drawScene()
 {
 
+	lantern();
 	moon();
 	sun();
 	myEngine.switchToPhongShading();
 
+	batton_de_papa();
 	myEngine.mvMatrixStack.pushMatrix();
-		myEngine.activateTexturing(true);
-		textures["grass"].attachTexture();
-		myEngine.updateMvMatrix();
-		grass.draw();
-		textures["grass"].detachTexture();
-		myEngine.activateTexturing(false);
+	myEngine.activateTexturing(true);
+	textures["grass"].attachTexture();
+	myEngine.updateMvMatrix();
+	grass.draw();
+	textures["grass"].detachTexture();
+	myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
-	//sapin();
+	// sapin();
 
 	for (const auto &zero : zeroPosition)
 	{
@@ -327,7 +393,6 @@ void drawScene()
 		tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
 		myEngine.mvMatrixStack.popMatrix();
 	}
-
 
 	/* Pas touche !!!
 	myEngine.mvMatrixStack.pushMatrix();

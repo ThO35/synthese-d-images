@@ -9,7 +9,7 @@ using namespace glbasimac;
 extern GLBI_Engine myEngine;
 
 /* Basic shape */
-extern STP3D::IndexedMesh *cube;
 extern STP3D::StandardMesh *repere;
+extern STP3D::IndexedMesh *cube;
 
 void drawSandBird();

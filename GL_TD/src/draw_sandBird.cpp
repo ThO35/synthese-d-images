@@ -1,4 +1,4 @@
-#include "sandBird.hpp"
+#include "draw_sandBird.hpp"
 
 double angle_wing = 0.0f;
 double angle_tail = 0.0f;

@@ -1,8 +1,9 @@
 #include <unordered_map>
 
 #include "draw_scene.hpp"
+#include "draw_sandBird.hpp"
+#include "draw_pnj.hpp"
 #include "spline.hpp"
-#include "sandBird.hpp"
 
 // Order UVs
 const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
@@ -25,15 +26,16 @@ Spline trajectory({{0, 0, 20},
 				   {0, 0, 20}});
 
 GLBI_Engine myEngine;
+
 std::unordered_map<std::string, GLBI_Texture> textures;
 
+STP3D::StandardMesh *repere;
+STP3D::IndexedMesh  *cube;
+STP3D::IndexedMesh  *sphere;
+STP3D::IndexedMesh  *cylindre;
+STP3D::StandardMesh *cone;
 STP3D::StandardMesh grass;
 GLBI_Convex_2D_Shape ground{3};
-STP3D::StandardMesh *repere;
-STP3D::IndexedMesh *cube;
-STP3D::IndexedMesh *sphere;
-STP3D::IndexedMesh *cylindre;
-STP3D::StandardMesh *cone;
 
 float Sp = 1.0f;
 
@@ -211,14 +213,14 @@ void moon()
 	auto lightZ = length * std::cos(-angle);
 
 	myEngine.setLightPosition(STP3D::Vector4D(0.0f, lightY, lightZ, 0.0f), 1);
-	myEngine.setLightIntensity(STP3D::Vector3D(0.25f, 0.25f, 0.113f), 1);
+	myEngine.setLightIntensity(STP3D::Vector3D(0.15f, 0.15f, 0.2f), 1);
 
 	myEngine.switchToFlatShading();
 
 	myEngine.activateTexturing(true);
 	textures["liveStar"].attachTexture();
 	myEngine.mvMatrixStack.addRotation(angle, {1, 0, 0});
-	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, -length});
+	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, length});
 	myEngine.updateMvMatrix();
 	sphere->draw();
 	textures["liveStar"].detachTexture();
@@ -394,7 +396,7 @@ void drawScene()
 		myEngine.mvMatrixStack.popMatrix();
 	}
 
-	/* Pas touche !!!
+
 	myEngine.mvMatrixStack.pushMatrix();
 		trajectory.update(0.001f);
 		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
@@ -408,11 +410,16 @@ void drawScene()
 			myEngine.activateTexturing(false);
 		myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.popMatrix();
-	*/
 
 	myEngine.switchToFlatShading();
 
-	show_trajectory();
+	// show_trajectory();
+
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
+		myEngine.updateMvMatrix();
+		drawPNJ();
+	myEngine.mvMatrixStack.popMatrix();
 }
 
 void update_altitude()
@@ -429,5 +436,5 @@ void update_altitude()
 	int x = length / 2 + pos_camera[0];
 	int y = width / 2 + pos_camera[1];
 	int coord_a = x * (length - 1) + y;
-	pos_camera[2] = points[coord_a * 18 + 2] + 1;
+	pos_camera[2] = points[coord_a * 18 + 2] + 10;
 }

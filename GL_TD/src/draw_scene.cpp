@@ -336,7 +336,7 @@ void lantern()
 
 	auto posX = 0.0f;
 	auto posY = static_cast<float>(-(M_PI / 12.0 * 2.5) - 0.05);
-	auto posZ = 8.99;
+	auto posZ = -10;
 
 	for (auto i = 2; i < 6; i++)
 	{
@@ -395,7 +395,6 @@ void drawScene()
 		tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
 		myEngine.mvMatrixStack.popMatrix();
 	}
-
 
 	myEngine.mvMatrixStack.pushMatrix();
 		trajectory.update(0.001f);

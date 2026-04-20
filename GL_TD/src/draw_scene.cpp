@@ -66,6 +66,8 @@ void initTextures()
 	init_texture("../assets/textures/wood.jpg", "wood");
 	init_texture("../assets/textures/moon.png", "liveStar");
 	init_texture("../assets/textures/sand.png", "sand");
+	init_texture("../assets/textures/sun.png", "sun");
+	init_texture("../assets/textures/skybox.png", "skybox");
 }
 
 void initTerrain()
@@ -221,6 +223,7 @@ void moon()
 	textures["liveStar"].attachTexture();
 	myEngine.mvMatrixStack.addRotation(angle, {1, 0, 0});
 	myEngine.mvMatrixStack.addTranslation({1.0f, 1.0f, length});
+	myEngine.mvMatrixStack.addHomothety({5.0f, 5.0f, 5.0f});
 	myEngine.updateMvMatrix();
 	sphere->draw();
 	textures["liveStar"].detachTexture();
@@ -239,16 +242,24 @@ void sun()
 	float lightY = length * std::sin(-angle);
 	float lightZ = length * std::cos(-angle);
 
+	float intensity = std::sin(std::atan2(lightZ, lightY)) * 10;
+	intensity = std::min(1.0f, std::max(0.0f, intensity));
+
 	myEngine.setLightPosition(STP3D::Vector4D(0.0f, lightY, lightZ, 0.0f), 0);
-	myEngine.setLightIntensity(STP3D::Vector3D(1.0f, 1.0f, 1.0f), 0);
+	myEngine.setLightIntensity(STP3D::Vector3D(intensity, intensity, intensity), 0);
 
 	myEngine.switchToFlatShading();
 
-	myEngine.setFlatColor(1.0f, 1.0f, 0.0f);
+	myEngine.activateTexturing(true);
+	textures["sun"].attachTexture();
 	myEngine.mvMatrixStack.addRotation(angle, {1.0f, 0.0f, 0.0f});
 	myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, length});
+	myEngine.mvMatrixStack.addHomothety({25.0f, 25.0f, 25.0f});
+	myEngine.mvMatrixStack.addRotation(-M_PI / 2.0f, {0.0f, 1.0f, 0.0f});
 	myEngine.updateMvMatrix();
 	sphere->draw();
+	textures["sun"].detachTexture();
+	myEngine.activateTexturing(false);
 
 	myEngine.mvMatrixStack.popMatrix();
 }
@@ -373,6 +384,19 @@ void drawScene()
 	lantern();
 	moon();
 	sun();
+
+	myEngine.activateTexturing(true);
+	textures["skybox"].attachTexture();
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addHomothety({length * 1.1f, length * 1.1f, length * 1.1f});
+		myEngine.mvMatrixStack.addRotation(M_PI / 2.0f, {0.0f, 1.0f, 0.0f});
+		myEngine.updateMvMatrix();
+		sphere->draw();
+	myEngine.mvMatrixStack.popMatrix();
+	textures["skybox"].detachTexture();
+	myEngine.activateTexturing(false);
+
+
 	myEngine.switchToPhongShading();
 
 	batton_de_papa();

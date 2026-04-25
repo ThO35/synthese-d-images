@@ -139,10 +139,26 @@ void onMouseButton(GLFWwindow *window, int button, int action, int /*mods*/)
 	}
 }
 
-int main(int /*argc*/, char ** /*argv*/)
+int main(int argc, char **argv)
 {
 
-	read_file();
+	if (argc > 1)
+	{
+		std::string file = argv[1];
+		if (!read_file(file))
+		{
+
+			return 1;
+		}
+	}
+	else
+	{
+		if (!read_file())
+		{
+
+			return 1;
+		}
+	}
 
 	/* GLFW initialisation */
 	GLFWwindow *window;

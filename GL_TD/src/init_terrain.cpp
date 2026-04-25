@@ -15,21 +15,21 @@ void read_comments(std::ifstream &file, std::string &str)
     }
 }
 
-void read_file()
+bool read_file(std::string text)
 {
 
     std::string str;
 
-    std::ifstream file("../assets/terrain/terrain.pgm", std::ios::binary);
+    std::ifstream file(text, std::ios::binary);
     if (!file.is_open())
     {
         std::cerr << "Error: Could not open file! Check your path." << file.good() << std::endl;
-        return;
+        return false;
     }
 
     std::getline(file, str);
     if (str != "P5")
-        return;
+        return false;
     std::cout << str << std::endl;
 
     read_comments(file, str);
@@ -63,4 +63,5 @@ void read_file()
         }
     }
     std::cout << "Min : " << static_cast<int>(minVal) << std::endl;
+    return true;
 }

@@ -1,4 +1,4 @@
-# Install script for directory: /home/tomasz/Git/synthese-d-images/GL_TD
+# Install script for directory: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/cmake_install.cmake")
-  include("/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac/cmake_install.cmake")
-  include("/home/tomasz/Git/synthese-d-images/GL_TD/build/src/cmake_install.cmake")
+  include("/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/cmake_install.cmake")
+  include("/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac/cmake_install.cmake")
+  include("/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/src/cmake_install.cmake")
 
 endif()
 
@@ -58,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tomasz/Git/synthese-d-images/GL_TD/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

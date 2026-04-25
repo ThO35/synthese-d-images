@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac
+C_INCLUDES = -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/include -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac
 
 C_FLAGS = 
 

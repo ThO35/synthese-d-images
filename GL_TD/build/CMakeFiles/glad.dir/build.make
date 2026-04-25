@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/glad.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/glad.dir/progress.make
 include CMakeFiles/glad.dir/flags.make
 
 CMakeFiles/glad.dir/third_party/glad/src/glad.c.o: CMakeFiles/glad.dir/flags.make
-CMakeFiles/glad.dir/third_party/glad/src/glad.c.o: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/src/glad.c
+CMakeFiles/glad.dir/third_party/glad/src/glad.c.o: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/src/glad.c
 CMakeFiles/glad.dir/third_party/glad/src/glad.c.o: CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/third_party/glad/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/third_party/glad/src/glad.c.o -MF CMakeFiles/glad.dir/third_party/glad/src/glad.c.o.d -o CMakeFiles/glad.dir/third_party/glad/src/glad.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/glad.dir/third_party/glad/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/glad.dir/third_party/glad/src/glad.c.o -MF CMakeFiles/glad.dir/third_party/glad/src/glad.c.o.d -o CMakeFiles/glad.dir/third_party/glad/src/glad.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/src/glad.c
 
 CMakeFiles/glad.dir/third_party/glad/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/third_party/glad/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/src/glad.c > CMakeFiles/glad.dir/third_party/glad/src/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/src/glad.c > CMakeFiles/glad.dir/third_party/glad/src/glad.c.i
 
 CMakeFiles/glad.dir/third_party/glad/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/third_party/glad/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/src/glad.c -o CMakeFiles/glad.dir/third_party/glad/src/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/src/glad.c -o CMakeFiles/glad.dir/third_party/glad/src/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -93,7 +93,7 @@ glad_EXTERNAL_OBJECTS =
 libglad.a: CMakeFiles/glad.dir/third_party/glad/src/glad.c.o
 libglad.a: CMakeFiles/glad.dir/build.make
 libglad.a: CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/glad.dir/clean:
 .PHONY : CMakeFiles/glad.dir/clean
 
 CMakeFiles/glad.dir/depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/glad.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/glad.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/glad.dir/depend
 

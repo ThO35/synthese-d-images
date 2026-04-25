@@ -3,14 +3,14 @@
 cmake_policy(SET CMP0009 NEW)
 
 # GLBASIMAC_SOURCES at third_party/glbasimac/CMakeLists.txt:7 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/*")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/*")
 set(OLD_GLOB
-  "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/cmake.verify_globs")
 endif()

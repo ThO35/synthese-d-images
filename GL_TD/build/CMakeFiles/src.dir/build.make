@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 # Utility rule file for src.
 
@@ -67,8 +67,8 @@ include CMakeFiles/src.dir/compiler_depend.make
 include CMakeFiles/src.dir/progress.make
 
 CMakeFiles/src:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/src && cd /home/tomasz/Git/synthese-d-images/GL_TD/build/src
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/src && make
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/src && cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/src
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/src && make
 
 src: CMakeFiles/src
 src: CMakeFiles/src.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/src.dir/clean:
 .PHONY : CMakeFiles/src.dir/clean
 
 CMakeFiles/src.dir/depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/src.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/src.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/src.dir/depend
 

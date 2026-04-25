@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles /home/tomasz/Git/synthese-d-images/GL_TD/build/src//CMakeFiles/progress.marks
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles 0
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/src//CMakeFiles/progress.marks
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,23 +148,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/TheGarden.dir/rule:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/TheGarden.dir/rule
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/TheGarden.dir/rule
 .PHONY : src/CMakeFiles/TheGarden.dir/rule
 
 # Convenience name for target.
@@ -173,7 +173,7 @@ TheGarden: src/CMakeFiles/TheGarden.dir/rule
 
 # fast build rule for target.
 TheGarden/fast:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/build
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/build
 .PHONY : TheGarden/fast
 
 TheGarden.o: TheGarden.cpp.o
@@ -181,7 +181,7 @@ TheGarden.o: TheGarden.cpp.o
 
 # target to build an object file
 TheGarden.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o
 .PHONY : TheGarden.cpp.o
 
 TheGarden.i: TheGarden.cpp.i
@@ -189,7 +189,7 @@ TheGarden.i: TheGarden.cpp.i
 
 # target to preprocess a source file
 TheGarden.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.i
 .PHONY : TheGarden.cpp.i
 
 TheGarden.s: TheGarden.cpp.s
@@ -197,7 +197,7 @@ TheGarden.s: TheGarden.cpp.s
 
 # target to generate assembly for a file
 TheGarden.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/TheGarden.cpp.s
 .PHONY : TheGarden.cpp.s
 
 draw_pnj.o: draw_pnj.cpp.o
@@ -205,7 +205,7 @@ draw_pnj.o: draw_pnj.cpp.o
 
 # target to build an object file
 draw_pnj.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o
 .PHONY : draw_pnj.cpp.o
 
 draw_pnj.i: draw_pnj.cpp.i
@@ -213,7 +213,7 @@ draw_pnj.i: draw_pnj.cpp.i
 
 # target to preprocess a source file
 draw_pnj.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.i
 .PHONY : draw_pnj.cpp.i
 
 draw_pnj.s: draw_pnj.cpp.s
@@ -221,7 +221,7 @@ draw_pnj.s: draw_pnj.cpp.s
 
 # target to generate assembly for a file
 draw_pnj.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.s
 .PHONY : draw_pnj.cpp.s
 
 draw_sandBird.o: draw_sandBird.cpp.o
@@ -229,7 +229,7 @@ draw_sandBird.o: draw_sandBird.cpp.o
 
 # target to build an object file
 draw_sandBird.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o
 .PHONY : draw_sandBird.cpp.o
 
 draw_sandBird.i: draw_sandBird.cpp.i
@@ -237,7 +237,7 @@ draw_sandBird.i: draw_sandBird.cpp.i
 
 # target to preprocess a source file
 draw_sandBird.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.i
 .PHONY : draw_sandBird.cpp.i
 
 draw_sandBird.s: draw_sandBird.cpp.s
@@ -245,7 +245,7 @@ draw_sandBird.s: draw_sandBird.cpp.s
 
 # target to generate assembly for a file
 draw_sandBird.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.s
 .PHONY : draw_sandBird.cpp.s
 
 draw_scene.o: draw_scene.cpp.o
@@ -253,7 +253,7 @@ draw_scene.o: draw_scene.cpp.o
 
 # target to build an object file
 draw_scene.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o
 .PHONY : draw_scene.cpp.o
 
 draw_scene.i: draw_scene.cpp.i
@@ -261,7 +261,7 @@ draw_scene.i: draw_scene.cpp.i
 
 # target to preprocess a source file
 draw_scene.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.i
 .PHONY : draw_scene.cpp.i
 
 draw_scene.s: draw_scene.cpp.s
@@ -269,15 +269,39 @@ draw_scene.s: draw_scene.cpp.s
 
 # target to generate assembly for a file
 draw_scene.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_scene.cpp.s
 .PHONY : draw_scene.cpp.s
+
+draw_tower.o: draw_tower.cpp.o
+.PHONY : draw_tower.o
+
+# target to build an object file
+draw_tower.cpp.o:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_tower.cpp.o
+.PHONY : draw_tower.cpp.o
+
+draw_tower.i: draw_tower.cpp.i
+.PHONY : draw_tower.i
+
+# target to preprocess a source file
+draw_tower.cpp.i:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_tower.cpp.i
+.PHONY : draw_tower.cpp.i
+
+draw_tower.s: draw_tower.cpp.s
+.PHONY : draw_tower.s
+
+# target to generate assembly for a file
+draw_tower.cpp.s:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/draw_tower.cpp.s
+.PHONY : draw_tower.cpp.s
 
 init_terrain.o: init_terrain.cpp.o
 .PHONY : init_terrain.o
 
 # target to build an object file
 init_terrain.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o
 .PHONY : init_terrain.cpp.o
 
 init_terrain.i: init_terrain.cpp.i
@@ -285,7 +309,7 @@ init_terrain.i: init_terrain.cpp.i
 
 # target to preprocess a source file
 init_terrain.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.i
 .PHONY : init_terrain.cpp.i
 
 init_terrain.s: init_terrain.cpp.s
@@ -293,7 +317,7 @@ init_terrain.s: init_terrain.cpp.s
 
 # target to generate assembly for a file
 init_terrain.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/init_terrain.cpp.s
 .PHONY : init_terrain.cpp.s
 
 spline.o: spline.cpp.o
@@ -301,7 +325,7 @@ spline.o: spline.cpp.o
 
 # target to build an object file
 spline.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.o
 .PHONY : spline.cpp.o
 
 spline.i: spline.cpp.i
@@ -309,7 +333,7 @@ spline.i: spline.cpp.i
 
 # target to preprocess a source file
 spline.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.i
 .PHONY : spline.cpp.i
 
 spline.s: spline.cpp.s
@@ -317,15 +341,39 @@ spline.s: spline.cpp.s
 
 # target to generate assembly for a file
 spline.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/spline.cpp.s
 .PHONY : spline.cpp.s
+
+tree.o: tree.cpp.o
+.PHONY : tree.o
+
+# target to build an object file
+tree.cpp.o:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/tree.cpp.o
+.PHONY : tree.cpp.o
+
+tree.i: tree.cpp.i
+.PHONY : tree.i
+
+# target to preprocess a source file
+tree.cpp.i:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/tree.cpp.i
+.PHONY : tree.cpp.i
+
+tree.s: tree.cpp.s
+.PHONY : tree.s
+
+# target to generate assembly for a file
+tree.cpp.s:
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/tree.cpp.s
+.PHONY : tree.cpp.s
 
 utils.o: utils.cpp.o
 .PHONY : utils.o
 
 # target to build an object file
 utils.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.o
 .PHONY : utils.cpp.o
 
 utils.i: utils.cpp.i
@@ -333,7 +381,7 @@ utils.i: utils.cpp.i
 
 # target to preprocess a source file
 utils.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.i
 .PHONY : utils.cpp.i
 
 utils.s: utils.cpp.s
@@ -341,7 +389,7 @@ utils.s: utils.cpp.s
 
 # target to generate assembly for a file
 utils.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/TheGarden.dir/build.make src/CMakeFiles/TheGarden.dir/utils.cpp.s
 .PHONY : utils.cpp.s
 
 # Help Target
@@ -369,12 +417,18 @@ help:
 	@echo "... draw_scene.o"
 	@echo "... draw_scene.i"
 	@echo "... draw_scene.s"
+	@echo "... draw_tower.o"
+	@echo "... draw_tower.i"
+	@echo "... draw_tower.s"
 	@echo "... init_terrain.o"
 	@echo "... init_terrain.i"
 	@echo "... init_terrain.s"
 	@echo "... spline.o"
 	@echo "... spline.i"
 	@echo "... spline.s"
+	@echo "... tree.o"
+	@echo "... tree.i"
+	@echo "... tree.s"
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"
@@ -389,7 +443,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

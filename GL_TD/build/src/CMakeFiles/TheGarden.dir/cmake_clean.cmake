@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/tomasz/Git/synthese-d-images/GL_TD/bin/TheGarden"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/bin/TheGarden.pdb"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/bin/TheGarden"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/bin/TheGarden.pdb"
   "CMakeFiles/TheGarden.dir/TheGarden.cpp.o"
   "CMakeFiles/TheGarden.dir/TheGarden.cpp.o.d"
   "CMakeFiles/TheGarden.dir/draw_pnj.cpp.o"
@@ -9,10 +9,14 @@ file(REMOVE_RECURSE
   "CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o.d"
   "CMakeFiles/TheGarden.dir/draw_scene.cpp.o"
   "CMakeFiles/TheGarden.dir/draw_scene.cpp.o.d"
+  "CMakeFiles/TheGarden.dir/draw_tower.cpp.o"
+  "CMakeFiles/TheGarden.dir/draw_tower.cpp.o.d"
   "CMakeFiles/TheGarden.dir/init_terrain.cpp.o"
   "CMakeFiles/TheGarden.dir/init_terrain.cpp.o.d"
   "CMakeFiles/TheGarden.dir/spline.cpp.o"
   "CMakeFiles/TheGarden.dir/spline.cpp.o.d"
+  "CMakeFiles/TheGarden.dir/tree.cpp.o"
+  "CMakeFiles/TheGarden.dir/tree.cpp.o.d"
   "CMakeFiles/TheGarden.dir/utils.cpp.o"
   "CMakeFiles/TheGarden.dir/utils.cpp.o.d"
 )

@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt" files)
+file(READ "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

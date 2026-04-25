@@ -1,4 +1,4 @@
-# Install script for directory: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac
+# Install script for directory: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include third_party/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include third_party/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 third_party/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/src && /usr/bin/cmake -P /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/src && /usr/bin/cmake -P /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: third_party/glfw/src/CMakeFiles/update_mappings
 update_mappings: third_party/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ third_party/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/build
 
 third_party/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 third_party/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/src /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/src /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/src /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/src /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/glfw/src/CMakeFiles/update_mappings.dir/depend
 

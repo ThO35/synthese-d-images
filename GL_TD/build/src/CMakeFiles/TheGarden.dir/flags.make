@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac
+CXX_INCLUDES = -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/include -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/include -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac
 
 CXX_FLAGS = -std=c++11 -Wall -Wextra
 

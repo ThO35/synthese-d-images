@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/include -I/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/src -I/home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glfw/src
+C_INCLUDES = -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/include -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/src -I/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glfw/src
 
 C_FLAGS = -std=gnu99 -fPIC -Wall
 

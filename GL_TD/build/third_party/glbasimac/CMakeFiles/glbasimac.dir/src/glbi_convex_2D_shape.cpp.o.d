@@ -1,7 +1,7 @@
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp \
  /usr/include/stdc-predef.h \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/glbasimac/glbi_convex_2D_shape.hpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/glbasimac/glbi_convex_2D_shape.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -152,21 +152,21 @@ third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/cassert \
  /usr/include/assert.h \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/mesh.hpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/mesh.hpp \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/gl_tools.hpp \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/globals.hpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/gl_tools.hpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/globals.hpp \
  /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include/glad/glad.h \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glad/include/KHR/khrplatform.h \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/include/glad/glad.h \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/vector3d.hpp \
+ /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/../glbasimac/tools/vector3d.hpp \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 # Include any dependencies generated for this target.
 include third_party/glbasimac/CMakeFiles/glbasimac.dir/depend.make
@@ -70,60 +70,60 @@ include third_party/glbasimac/CMakeFiles/glbasimac.dir/progress.make
 include third_party/glbasimac/CMakeFiles/glbasimac.dir/flags.make
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/flags.make
-third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp
+third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp > CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp > CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp -o CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_convex_2D_shape.cpp -o CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/flags.make
-third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp
+third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp > CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp > CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp -o CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_engine.cpp -o CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/flags.make
-third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp
+third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp > CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp > CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp -o CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_set_of_points.cpp -o CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/flags.make
-third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o: /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp
+third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o: /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o: third_party/glbasimac/CMakeFiles/glbasimac.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o -c /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o -MF CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o.d -o CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp > CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp > CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp -o CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac/src/glbi_texture.cpp -o CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s
 
 # Object files for target glbasimac
 glbasimac_OBJECTS = \
@@ -141,19 +141,19 @@ third_party/glbasimac/libglbasimac.a: third_party/glbasimac/CMakeFiles/glbasimac
 third_party/glbasimac/libglbasimac.a: third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o
 third_party/glbasimac/libglbasimac.a: third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make
 third_party/glbasimac/libglbasimac.a: third_party/glbasimac/CMakeFiles/glbasimac.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libglbasimac.a"
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -P CMakeFiles/glbasimac.dir/cmake_clean_target.cmake
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glbasimac.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libglbasimac.a"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -P CMakeFiles/glbasimac.dir/cmake_clean_target.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glbasimac.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/glbasimac/CMakeFiles/glbasimac.dir/build: third_party/glbasimac/libglbasimac.a
 .PHONY : third_party/glbasimac/CMakeFiles/glbasimac.dir/build
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/clean:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -P CMakeFiles/glbasimac.dir/cmake_clean.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac && $(CMAKE_COMMAND) -P CMakeFiles/glbasimac.dir/cmake_clean.cmake
 .PHONY : third_party/glbasimac/CMakeFiles/glbasimac.dir/clean
 
 third_party/glbasimac/CMakeFiles/glbasimac.dir/depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tomasz/Git/synthese-d-images/GL_TD /home/tomasz/Git/synthese-d-images/GL_TD/third_party/glbasimac /home/tomasz/Git/synthese-d-images/GL_TD/build /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac/CMakeFiles/glbasimac.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glbasimac /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac/CMakeFiles/glbasimac.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : third_party/glbasimac/CMakeFiles/glbasimac.dir/depend
 

@@ -7,7 +7,7 @@ events:
       - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
       - "CMakeLists.txt:4 (project)"
     message: |
-      The system is: Linux - 6.17.0-20-generic - x86_64
+      The system is: Linux - 6.6.87.2-microsoft-standard-WSL2 - x86_64
   -
     kind: "message-v1"
     backtrace:
@@ -28,7 +28,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+        /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -50,7 +50,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+        /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
       
   -
     kind: "try_compile-v1"
@@ -61,8 +61,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,13 +71,15 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_84cd1/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_84cd1.dir/build.make CMakeFiles/cmTC_84cd1.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh'
-        Building C object CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8eaa0/fast
+        gmake: Warning: File 'Makefile' has modification time 7.1 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8eaa0.dir/build.make CMakeFiles/cmTC_8eaa0.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_8eaa0.dir/flags.make' has modification time 7.1 s in the future
+        Building C object CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -87,8 +89,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_84cd1.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccRTxXiQ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8eaa0.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc7RqTkf.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -105,15 +107,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/'
-         as -v --64 -o CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o /tmp/ccRTxXiQ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/'
+         as -v --64 -o CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o /tmp/cc7RqTkf.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_84cd1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84cd1.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -o cmTC_84cd1 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_8eaa0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8eaa0.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -o cmTC_8eaa0 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -126,10 +128,12 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84cd1' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_84cd1.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBv5oba.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_84cd1 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84cd1' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_84cd1.'
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8eaa0' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8eaa0.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCzgdAi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8eaa0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8eaa0' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8eaa0.'
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -163,13 +167,15 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh']
+        ignore line: [Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_84cd1/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_84cd1.dir/build.make CMakeFiles/cmTC_84cd1.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-yxrBYh']
-        ignore line: [Building C object CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8eaa0/fast]
+        ignore line: [gmake: Warning: File 'Makefile' has modification time 7.1 s in the future]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8eaa0.dir/build.make CMakeFiles/cmTC_8eaa0.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-MSSYNl']
+        ignore line: [gmake[1]: Warning: File 'CMakeFiles/cmTC_8eaa0.dir/flags.make' has modification time 7.1 s in the future]
+        ignore line: [Building C object CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -179,8 +185,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_84cd1.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccRTxXiQ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8eaa0.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc7RqTkf.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -197,15 +203,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o /tmp/ccRTxXiQ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o /tmp/cc7RqTkf.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_84cd1]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84cd1.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -o cmTC_84cd1 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_8eaa0]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8eaa0.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -o cmTC_8eaa0 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -218,13 +224,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_84cd1' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_84cd1.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBv5oba.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_84cd1 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8eaa0' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8eaa0.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCzgdAi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8eaa0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccBv5oba.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccCzgdAi.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -242,7 +248,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_84cd1] ==> ignore
+          arg [cmTC_8eaa0] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -254,7 +260,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_84cd1.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_8eaa0.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -294,8 +300,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -304,13 +310,15 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c3b17/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_c3b17.dir/build.make CMakeFiles/cmTC_c3b17.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL'
-        Building CXX object CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20c9d/fast
+        gmake: Warning: File 'Makefile' has modification time 7.1 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_20c9d.dir/build.make CMakeFiles/cmTC_20c9d.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_20c9d.dir/flags.make' has modification time 7.1 s in the future
+        Building CXX object CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -320,8 +328,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c3b17.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccIeeaiL.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_20c9d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccY65WUW.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -342,15 +350,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 7896445e4990772fdae9dc0659a99266
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/'
-         as -v --64 -o CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccIeeaiL.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/'
+         as -v --64 -o CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccY65WUW.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_c3b17
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3b17.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c3b17 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_20c9d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20c9d.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_20c9d 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -363,10 +371,12 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3b17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3b17.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4tJ7CU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c3b17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3b17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3b17.'
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20c9d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20c9d.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5nPETj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_20c9d /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20c9d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20c9d.'
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -406,13 +416,15 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL']
+        ignore line: [Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c3b17/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_c3b17.dir/build.make CMakeFiles/cmTC_c3b17.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-dFdHZL']
-        ignore line: [Building CXX object CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_20c9d/fast]
+        ignore line: [gmake: Warning: File 'Makefile' has modification time 7.1 s in the future]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_20c9d.dir/build.make CMakeFiles/cmTC_20c9d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KzznmT']
+        ignore line: [gmake[1]: Warning: File 'CMakeFiles/cmTC_20c9d.dir/flags.make' has modification time 7.1 s in the future]
+        ignore line: [Building CXX object CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -422,8 +434,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_c3b17.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccIeeaiL.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_20c9d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccY65WUW.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -444,15 +456,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 7896445e4990772fdae9dc0659a99266]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccIeeaiL.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccY65WUW.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_c3b17]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3b17.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c3b17 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_20c9d]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20c9d.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_20c9d ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -465,13 +477,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3b17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_c3b17.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4tJ7CU.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c3b17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20c9d' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_20c9d.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5nPETj.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_20c9d /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc4tJ7CU.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc5nPETj.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -489,7 +501,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_c3b17] ==> ignore
+          arg [cmTC_20c9d] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -501,7 +513,7 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_c3b17.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_20c9d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -528,6 +540,10 @@ events:
         implicit fwks: []
       
       
+...
+
+---
+events:
   -
     kind: "try_compile-v1"
     backtrace:
@@ -539,28 +555,28 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6e64c/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_6e64c.dir/build.make CMakeFiles/cmTC_6e64c.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu'
-        Building C object CMakeFiles/cmTC_6e64c.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_6e64c.dir/src.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu/src.c
-        Linking C executable cmTC_6e64c
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e64c.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_6e64c.dir/src.c.o -o cmTC_6e64c 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-Xf5bHu'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b168d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b168d.dir/build.make CMakeFiles/cmTC_b168d.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0'
+        Building C object CMakeFiles/cmTC_b168d.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b168d.dir/src.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0/src.c
+        Linking C executable cmTC_b168d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b168d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_b168d.dir/src.c.o -o cmTC_b168d 
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-zoEHV0'
         
       exitCode: 0
   -
@@ -570,30 +586,34 @@ events:
       - "/usr/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
       - "third_party/glfw/CMakeLists.txt:206 (find_package)"
     checks:
-      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so"
+      - "Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "X11_LIB_X11_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b9a9a/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_b9a9a.dir/build.make CMakeFiles/cmTC_b9a9a.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68'
-        Building C object CMakeFiles/cmTC_b9a9a.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_b9a9a.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68/CheckFunctionExists.c
-        Linking C executable cmTC_b9a9a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9a9a.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_b9a9a.dir/CheckFunctionExists.c.o -o cmTC_b9a9a  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-6kww68'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2d673/fast
+        gmake: Warning: File 'Makefile' has modification time 10 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2d673.dir/build.make CMakeFiles/cmTC_2d673.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_2d673.dir/flags.make' has modification time 10 s in the future
+        Building C object CMakeFiles/cmTC_2d673.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_2d673.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng/CheckFunctionExists.c
+        Linking C executable cmTC_2d673
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d673.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_2d673.dir/CheckFunctionExists.c.o -o cmTC_2d673  /usr/lib/x86_64-linux-gnu/libX11.so 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KxXmng'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -605,28 +625,32 @@ events:
     checks:
       - "Looking for gethostbyname"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_GETHOSTBYNAME"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_98e25/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_98e25.dir/build.make CMakeFiles/cmTC_98e25.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11'
-        Building C object CMakeFiles/cmTC_98e25.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_98e25.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11/CheckFunctionExists.c
-        Linking C executable cmTC_98e25
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98e25.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_98e25.dir/CheckFunctionExists.c.o -o cmTC_98e25 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-UD5i11'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3e1f0/fast
+        gmake: Warning: File 'Makefile' has modification time 10 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3e1f0.dir/build.make CMakeFiles/cmTC_3e1f0.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_3e1f0.dir/flags.make' has modification time 10 s in the future
+        Building C object CMakeFiles/cmTC_3e1f0.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_3e1f0.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9/CheckFunctionExists.c
+        Linking C executable cmTC_3e1f0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e1f0.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_3e1f0.dir/CheckFunctionExists.c.o -o cmTC_3e1f0 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-k4VIr9'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -638,28 +662,32 @@ events:
     checks:
       - "Looking for connect"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_CONNECT"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d0b53/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_d0b53.dir/build.make CMakeFiles/cmTC_d0b53.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C'
-        Building C object CMakeFiles/cmTC_d0b53.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_d0b53.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C/CheckFunctionExists.c
-        Linking C executable cmTC_d0b53
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0b53.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_d0b53.dir/CheckFunctionExists.c.o -o cmTC_d0b53 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-e5GR4C'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_032f2/fast
+        gmake: Warning: File 'Makefile' has modification time 10 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_032f2.dir/build.make CMakeFiles/cmTC_032f2.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_032f2.dir/flags.make' has modification time 10 s in the future
+        Building C object CMakeFiles/cmTC_032f2.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_032f2.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd/CheckFunctionExists.c
+        Linking C executable cmTC_032f2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_032f2.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_032f2.dir/CheckFunctionExists.c.o -o cmTC_032f2 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-KlD6dd'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -671,28 +699,32 @@ events:
     checks:
       - "Looking for remove"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_REMOVE"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3e527/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_3e527.dir/build.make CMakeFiles/cmTC_3e527.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C'
-        Building C object CMakeFiles/cmTC_3e527.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_3e527.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C/CheckFunctionExists.c
-        Linking C executable cmTC_3e527
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e527.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_3e527.dir/CheckFunctionExists.c.o -o cmTC_3e527 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-E7Hq6C'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1ded6/fast
+        gmake: Warning: File 'Makefile' has modification time 10 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1ded6.dir/build.make CMakeFiles/cmTC_1ded6.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_1ded6.dir/flags.make' has modification time 10 s in the future
+        Building C object CMakeFiles/cmTC_1ded6.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_1ded6.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO/CheckFunctionExists.c
+        Linking C executable cmTC_1ded6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ded6.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_1ded6.dir/CheckFunctionExists.c.o -o cmTC_1ded6 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-aNa9RO'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
         
       exitCode: 0
   -
@@ -704,28 +736,28 @@ events:
     checks:
       - "Looking for shmat"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_SHMAT"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b8b4/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_9b8b4.dir/build.make CMakeFiles/cmTC_9b8b4.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt'
-        Building C object CMakeFiles/cmTC_9b8b4.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_9b8b4.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt/CheckFunctionExists.c
-        Linking C executable cmTC_9b8b4
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b8b4.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_9b8b4.dir/CheckFunctionExists.c.o -o cmTC_9b8b4 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-2yucdt'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_016c1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_016c1.dir/build.make CMakeFiles/cmTC_016c1.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua'
+        Building C object CMakeFiles/cmTC_016c1.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_016c1.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua/CheckFunctionExists.c
+        Linking C executable cmTC_016c1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_016c1.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_016c1.dir/CheckFunctionExists.c.o -o cmTC_016c1 
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-oA7hua'
         
       exitCode: 0
   -
@@ -737,28 +769,28 @@ events:
     checks:
       - "Looking for IceConnectionNumber in ICE"
     directories:
-      source: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl"
-      binary: "/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl"
+      source: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV"
+      binary: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/tomasz/Git/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/third_party/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
       cached: true
       stdout: |
-        Change Dir: '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl'
+        Change Dir: '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb1db/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_fb1db.dir/build.make CMakeFiles/cmTC_fb1db.dir/build
-        gmake[1]: Entering directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl'
-        Building C object CMakeFiles/cmTC_fb1db.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_fb1db.dir/CheckFunctionExists.c.o -c /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl/CheckFunctionExists.c
-        Linking C executable cmTC_fb1db
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb1db.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_fb1db.dir/CheckFunctionExists.c.o -o cmTC_fb1db  -lICE 
-        gmake[1]: Leaving directory '/home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-vmjDbl'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b419b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b419b.dir/build.make CMakeFiles/cmTC_b419b.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV'
+        Building C object CMakeFiles/cmTC_b419b.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_b419b.dir/CheckFunctionExists.c.o -c /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV/CheckFunctionExists.c
+        Linking C executable cmTC_b419b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b419b.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_b419b.dir/CheckFunctionExists.c.o -o cmTC_b419b  -lICE 
+        gmake[1]: Leaving directory '/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/CMakeScratch/TryCompile-C7iIqV'
         
       exitCode: 0
 ...

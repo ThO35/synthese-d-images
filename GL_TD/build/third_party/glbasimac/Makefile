@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tomasz/Git/synthese-d-images/GL_TD
+CMAKE_SOURCE_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tomasz/Git/synthese-d-images/GL_TD/build
+CMAKE_BINARY_DIR = /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles /home/tomasz/Git/synthese-d-images/GL_TD/build/third_party/glbasimac//CMakeFiles/progress.marks
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles 0
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/third_party/glbasimac//CMakeFiles/progress.marks
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/clean
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,23 +148,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/preinstall
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/preinstall
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third_party/glbasimac/CMakeFiles/glbasimac.dir/rule:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/CMakeFiles/glbasimac.dir/rule
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/glbasimac/CMakeFiles/glbasimac.dir/rule
 .PHONY : third_party/glbasimac/CMakeFiles/glbasimac.dir/rule
 
 # Convenience name for target.
@@ -173,7 +173,7 @@ glbasimac: third_party/glbasimac/CMakeFiles/glbasimac.dir/rule
 
 # fast build rule for target.
 glbasimac/fast:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/build
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/build
 .PHONY : glbasimac/fast
 
 src/glbi_convex_2D_shape.o: src/glbi_convex_2D_shape.cpp.o
@@ -181,7 +181,7 @@ src/glbi_convex_2D_shape.o: src/glbi_convex_2D_shape.cpp.o
 
 # target to build an object file
 src/glbi_convex_2D_shape.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.o
 .PHONY : src/glbi_convex_2D_shape.cpp.o
 
 src/glbi_convex_2D_shape.i: src/glbi_convex_2D_shape.cpp.i
@@ -189,7 +189,7 @@ src/glbi_convex_2D_shape.i: src/glbi_convex_2D_shape.cpp.i
 
 # target to preprocess a source file
 src/glbi_convex_2D_shape.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.i
 .PHONY : src/glbi_convex_2D_shape.cpp.i
 
 src/glbi_convex_2D_shape.s: src/glbi_convex_2D_shape.cpp.s
@@ -197,7 +197,7 @@ src/glbi_convex_2D_shape.s: src/glbi_convex_2D_shape.cpp.s
 
 # target to generate assembly for a file
 src/glbi_convex_2D_shape.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_convex_2D_shape.cpp.s
 .PHONY : src/glbi_convex_2D_shape.cpp.s
 
 src/glbi_engine.o: src/glbi_engine.cpp.o
@@ -205,7 +205,7 @@ src/glbi_engine.o: src/glbi_engine.cpp.o
 
 # target to build an object file
 src/glbi_engine.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.o
 .PHONY : src/glbi_engine.cpp.o
 
 src/glbi_engine.i: src/glbi_engine.cpp.i
@@ -213,7 +213,7 @@ src/glbi_engine.i: src/glbi_engine.cpp.i
 
 # target to preprocess a source file
 src/glbi_engine.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.i
 .PHONY : src/glbi_engine.cpp.i
 
 src/glbi_engine.s: src/glbi_engine.cpp.s
@@ -221,7 +221,7 @@ src/glbi_engine.s: src/glbi_engine.cpp.s
 
 # target to generate assembly for a file
 src/glbi_engine.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_engine.cpp.s
 .PHONY : src/glbi_engine.cpp.s
 
 src/glbi_set_of_points.o: src/glbi_set_of_points.cpp.o
@@ -229,7 +229,7 @@ src/glbi_set_of_points.o: src/glbi_set_of_points.cpp.o
 
 # target to build an object file
 src/glbi_set_of_points.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.o
 .PHONY : src/glbi_set_of_points.cpp.o
 
 src/glbi_set_of_points.i: src/glbi_set_of_points.cpp.i
@@ -237,7 +237,7 @@ src/glbi_set_of_points.i: src/glbi_set_of_points.cpp.i
 
 # target to preprocess a source file
 src/glbi_set_of_points.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.i
 .PHONY : src/glbi_set_of_points.cpp.i
 
 src/glbi_set_of_points.s: src/glbi_set_of_points.cpp.s
@@ -245,7 +245,7 @@ src/glbi_set_of_points.s: src/glbi_set_of_points.cpp.s
 
 # target to generate assembly for a file
 src/glbi_set_of_points.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_set_of_points.cpp.s
 .PHONY : src/glbi_set_of_points.cpp.s
 
 src/glbi_texture.o: src/glbi_texture.cpp.o
@@ -253,7 +253,7 @@ src/glbi_texture.o: src/glbi_texture.cpp.o
 
 # target to build an object file
 src/glbi_texture.cpp.o:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.o
 .PHONY : src/glbi_texture.cpp.o
 
 src/glbi_texture.i: src/glbi_texture.cpp.i
@@ -261,7 +261,7 @@ src/glbi_texture.i: src/glbi_texture.cpp.i
 
 # target to preprocess a source file
 src/glbi_texture.cpp.i:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.i
 .PHONY : src/glbi_texture.cpp.i
 
 src/glbi_texture.s: src/glbi_texture.cpp.s
@@ -269,7 +269,7 @@ src/glbi_texture.s: src/glbi_texture.cpp.s
 
 # target to generate assembly for a file
 src/glbi_texture.cpp.s:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(MAKE) $(MAKESILENT) -f third_party/glbasimac/CMakeFiles/glbasimac.dir/build.make third_party/glbasimac/CMakeFiles/glbasimac.dir/src/glbi_texture.cpp.s
 .PHONY : src/glbi_texture.cpp.s
 
 # Help Target
@@ -308,7 +308,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /home/tomasz/Git/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/tomasz/Git/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -P /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build/CMakeFiles/VerifyGlobs.cmake
+	cd /mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

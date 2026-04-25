@@ -8,13 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/TheGarden.cpp" "src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/draw_pnj.cpp" "src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/draw_sandBird.cpp" "src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/draw_scene.cpp" "src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/init_terrain.cpp" "src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/spline.cpp" "src/CMakeFiles/TheGarden.dir/spline.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/spline.cpp.o.d"
-  "/home/tomasz/Git/synthese-d-images/GL_TD/src/utils.cpp" "src/CMakeFiles/TheGarden.dir/utils.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/utils.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/TheGarden.cpp" "src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/TheGarden.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/draw_pnj.cpp" "src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_pnj.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/draw_sandBird.cpp" "src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_sandBird.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/draw_scene.cpp" "src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_scene.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/draw_tower.cpp" "src/CMakeFiles/TheGarden.dir/draw_tower.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/draw_tower.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/init_terrain.cpp" "src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/init_terrain.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/spline.cpp" "src/CMakeFiles/TheGarden.dir/spline.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/spline.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/tree.cpp" "src/CMakeFiles/TheGarden.dir/tree.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/tree.cpp.o.d"
+  "/mnt/c/Users/Tomas/OneDrive/Bureau/synthese-d-images/GL_TD/src/utils.cpp" "src/CMakeFiles/TheGarden.dir/utils.cpp.o" "gcc" "src/CMakeFiles/TheGarden.dir/utils.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

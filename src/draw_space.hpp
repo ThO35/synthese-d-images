@@ -15,12 +15,10 @@ using namespace glbasimac;
 /* OpenGL Engine */
 extern GLBI_Engine myEngine;
 
-/* Basic shape */
-extern STP3D::StandardMesh *repere;
-extern STP3D::IndexedMesh  *cube;
-extern STP3D::IndexedMesh  *sphere;
-extern STP3D::IndexedMesh  *cylindre;
-extern STP3D::StandardMesh *cone;
-extern std::unordered_map<std::string, GLBI_Texture> textures;
 
-void tour_de_sauron();
+extern std::unordered_map<std::string, GLBI_Texture> textures;
+extern STP3D::IndexedMesh  *sphere;
+
+void draw_sun();
+void draw_moon();
+void draw_skybox();

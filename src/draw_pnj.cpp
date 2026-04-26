@@ -1,20 +1,5 @@
 #include "draw_pnj.hpp"
-
-
-STP3D::Vector4D FpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos,float posY, float posZ) {
-    float tmp[16];
-    viewMatrix.get(tmp); 
-
-    float dx = viewPos[0] - tmp[12];
-    float dy = viewPos[1] - tmp[13];
-    float dz = viewPos[2] - tmp[14];
-
-    float x = dx * tmp[0] + dy * tmp[1] + dz * tmp[2];
-    float y = (dx * tmp[4] + dy * tmp[5] + dz * tmp[6])+posY;
-    float z = (dx * tmp[8] + dy * tmp[9] + dz * tmp[10]) + posZ;
-
-    return STP3D::Vector4D(x, y, z, 1.0f);
-}
+#include "utils.hpp"
 
 
 void draw_lantern(int first_id_light, int nb_light)
@@ -32,7 +17,7 @@ void draw_lantern(int first_id_light, int nb_light)
             
 
             auto view = currentMatrix * localOrigin;
-            auto lightPos = FpsPosition(myEngine.viewMatrix, view ,posY, posZ ); 
+            auto lightPos = relative_2_absolute(myEngine.viewMatrix, view, 0, posY, posZ); 
 
 			auto offset = i * 2.3f;
 			auto time = glfwGetTime() * 8.0f + offset;

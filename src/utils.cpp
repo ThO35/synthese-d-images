@@ -71,3 +71,18 @@ void add_points(float x, float y, float h, float u, float v, std::vector<float> 
     uvs.insert(uvs.end(), {u, v});
     colors.insert(colors.end(), {1.0f, 1.0f, 1.0f});
 }
+
+STP3D::Vector4D relative_2_absolute(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos, float posX, float posY, float posZ) {
+    float tmp[16];
+    viewMatrix.get(tmp); 
+
+    float dx = viewPos[0] - tmp[12];
+    float dy = viewPos[1] - tmp[13];
+    float dz = viewPos[2] - tmp[14];
+
+    float x = (dx * tmp[0] + dy * tmp[1] + dz * tmp[2]) + posX;
+    float y = (dx * tmp[4] + dy * tmp[5] + dz * tmp[6]) + posY;
+    float z = (dx * tmp[8] + dy * tmp[9] + dz * tmp[10]) + posZ;
+
+    return STP3D::Vector4D(x, y, z, 1.0f);
+}

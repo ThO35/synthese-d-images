@@ -1,20 +1,9 @@
 #include"draw_tower.hpp"
 
-
-STP3D::Vector4D fpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos,float posY, float posZ) {
-    float tmp[16];
-    viewMatrix.get(tmp); 
-
-    float dx = viewPos[0] - tmp[12];
-    float dy = viewPos[1] - tmp[13];
-    float dz = viewPos[2] - tmp[14];
-
-    float x = dx * tmp[0] + dy * tmp[1] + dz * tmp[2];
-    float y = (dx * tmp[4] + dy * tmp[5] + dz * tmp[6])+posY;
-    float z = (dx * tmp[8] + dy * tmp[9] + dz * tmp[10]) + posZ;
-
-    return STP3D::Vector4D(x, y, z, 1.0f);
-}
+float next_change = 0.0f;
+float angle = 0.0f;
+int random1 = 0;
+int random2 = 0;
 
 void pilier_arc(float debut, float fin, float rayon){
 	for (float j = 0; j <= 100; j++) {
@@ -72,8 +61,7 @@ void eye (){
 		
 
 		auto view = currentMatrix * localOrigin;
-		auto lightPos = fpsPosition(myEngine.viewMatrix, view ,0 ,0); 
-		
+		auto lightPos = relative_2_absolute(myEngine.viewMatrix, view, 0, 0, 0); 
 		myEngine.setLightPosition(lightPos, 5);
 		myEngine.setLightIntensity({1000.0f, 0.0f, 0.0f}, 5);
 		myEngine.switchToFlatShading();

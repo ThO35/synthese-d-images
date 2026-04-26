@@ -15,4 +15,6 @@ extern STP3D::IndexedMesh  *sphere;
 extern STP3D::IndexedMesh  *cylindre;
 extern STP3D::StandardMesh *cone;
 
-void drawPNJ(int first_id_light, int nb_light);
+extern bool in_mouvement;
+
+void drawPNJ(int first_id_light, int nb_light, bool with_head);

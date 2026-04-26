@@ -38,6 +38,7 @@ double scaling = 0.1;
 bool is_ground_view = false;
 bool line_mod = false;
 bool activeShader = false;
+bool in_mouvement = false;
 
 /* Error handling function */
 void onError(int error, const char *description)
@@ -56,6 +57,7 @@ void onWindowResized(GLFWwindow * /*window*/, int width, int height)
 
 void movement(GLFWwindow *window)
 {
+	in_mouvement = false;
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 		angle_vertical += 1.0f * speed;
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
@@ -69,21 +71,25 @@ void movement(GLFWwindow *window)
 	{
 		pos_camera[0] += cos(deg2rad(angle_horizontal)) * speed;
 		pos_camera[1] += sin(deg2rad(angle_horizontal)) * speed;
+		in_mouvement = true;
 	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 	{
 		pos_camera[0] -= cos(deg2rad(angle_horizontal)) * speed;
 		pos_camera[1] -= sin(deg2rad(angle_horizontal)) * speed;
+		in_mouvement = true;
 	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 	{
 		pos_camera[0] -= sin(deg2rad(angle_horizontal)) * speed;
 		pos_camera[1] += cos(deg2rad(angle_horizontal)) * speed;
+		in_mouvement = true;
 	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 	{
 		pos_camera[0] += sin(deg2rad(angle_horizontal)) * speed;
 		pos_camera[1] -= cos(deg2rad(angle_horizontal)) * speed;
+		in_mouvement = true;
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
@@ -218,8 +224,7 @@ int main(int argc, char **argv)
 		/* Fix camera position */
 		myEngine.mvMatrixStack.loadIdentity();
 
-		if (is_ground_view)
-			update_altitude();
+		if (is_ground_view) update_bounded_coord(pos_camera);
 
 		Vector3D viewed_point = Vector3D(pos_camera[0] + cos(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),
 										 pos_camera[1] + sin(deg2rad(angle_horizontal)) * cos(deg2rad(angle_vertical)),

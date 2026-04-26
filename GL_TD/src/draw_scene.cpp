@@ -15,6 +15,8 @@ Vector3D pos_camera = Vector3D(-30.0, 0.0, 0.0); // Position of the camera
 float angle_horizontal{0.0};					 // Angle between x axis and viewpoint
 float angle_vertical{0.0};						 // Angle between z axis and viewpoint
 float speed{1.0};								 // Camera movement speed
+Vector3D pos_pnj = Vector3D(0.0f, 0.0f, 0.0f);
+float angle_pnj{0.0f};
 
 std::vector<float> points{};
 Spline trajectory({{0, 0, 20},
@@ -42,6 +44,23 @@ GLBI_Convex_2D_Shape ground{3};
 float Sp = 1.0f;
 
 std::vector<std::array<float, 5>> zeroPosition = {};
+
+void update_bounded_coord(Vector3D& vec)
+{
+	// Born to map
+	if (vec[0] <= -(length / 2))
+		vec[0] = -(length / 2);
+	if (vec[0] >= length / 2 - 1)
+		vec[0] = length / 2 - 1;
+	if (vec[1] <= -(width / 2))
+		vec[1] = -(width / 2);
+	if (vec[1] >= width / 2 - 1)
+		vec[1] = width / 2 - 1;
+	int x = length / 2 + vec[0];
+	int y = width / 2 + vec[1];
+	int coord_a = x * (length - 1) + y;
+	vec[2] = points[coord_a * 18 + 2] + 4;
+}
 
 void initTextures()
 {
@@ -144,6 +163,8 @@ void initScene()
 	repere->createVAO();
 
 	initTerrain();
+
+	update_bounded_coord(pos_pnj);
 }
 
 
@@ -254,7 +275,6 @@ void draw_terrain()
 		textures["grass"].attachTexture();
 
 		auto shading = myEngine.currentShader;
-		std::cout << " " << shading << std::endl;
 		if (shading == 1)
 		{
 			myEngine.setShininess(2.0f);
@@ -271,7 +291,21 @@ void draw_terrain()
 
 void drawScene()
 {
+	if (is_ground_view)
+	{
+		pos_pnj = pos_camera;
+		angle_pnj = angle_horizontal + 180.0f;
+		std::cout << angle_pnj << std::endl;
+	}
 	if (activeShader) myEngine.switchToPhongShading();
+
+	myEngine.mvMatrixStack.pushMatrix();
+		std::cout << pos_pnj << std::endl;
+		myEngine.mvMatrixStack.addTranslation({pos_pnj[0], pos_pnj[1], pos_pnj[2] - 1.9f});
+		myEngine.mvMatrixStack.addRotation(M_PI / 180.f * angle_pnj, {0.0f, 0.0f, 1.0f});
+		myEngine.updateMvMatrix();
+		drawPNJ(2, 4, !is_ground_view);
+	myEngine.mvMatrixStack.popMatrix();
 
 	myEngine.mvMatrixStack.pushMatrix();
 		myEngine.mvMatrixStack.addHomothety({length * 1.1f, length * 1.1f, length * 1.1f});
@@ -307,30 +341,9 @@ void drawScene()
 		myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.popMatrix();
 
-	if (activeShader) myEngine.switchToFlatShading();
 
 	// show_trajectory();
 
-	myEngine.mvMatrixStack.pushMatrix();
-		myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
-		myEngine.updateMvMatrix();
-		drawPNJ(2, 4);
-	myEngine.mvMatrixStack.popMatrix();
-}
-
-void update_altitude()
-{
-	// Born to map
-	if (pos_camera[0] <= -(length / 2))
-		pos_camera[0] = -(length / 2);
-	if (pos_camera[0] >= length / 2 - 1)
-		pos_camera[0] = length / 2 - 1;
-	if (pos_camera[1] <= -(width / 2))
-		pos_camera[1] = -(width / 2);
-	if (pos_camera[1] >= width / 2 - 1)
-		pos_camera[1] = width / 2 - 1;
-	int x = length / 2 + pos_camera[0];
-	int y = width / 2 + pos_camera[1];
-	int coord_a = x * (length - 1) + y;
-	pos_camera[2] = points[coord_a * 18 + 2] + 10;
+	
+	if (activeShader) myEngine.switchToFlatShading();
 }

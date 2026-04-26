@@ -19,6 +19,7 @@ extern Vector3D pos_camera;    // Position of the camera
 extern float angle_horizontal; // Angle between x axis and viewpoint
 extern float angle_vertical;   // Angle between z axis and viewpoint
 extern float speed;            // Camera movement speed
+extern bool is_ground_view;
 extern bool activeShader;      // Active shader phong
 
 /* OpenGL Engine */
@@ -36,4 +37,4 @@ void drawScene();
 
 void initTerrain();
 
-void update_altitude();
+void update_bounded_coord(Vector3D& vec);

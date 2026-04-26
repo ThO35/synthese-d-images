@@ -305,12 +305,10 @@ void drawScene()
 	{
 		pos_pnj = pos_camera;
 		angle_pnj = angle_horizontal + 180.0f;
-		std::cout << angle_pnj << std::endl;
 	}
 	if (activeShader) myEngine.switchToPhongShading();
 
 	myEngine.mvMatrixStack.pushMatrix();
-		std::cout << pos_pnj << std::endl;
 		myEngine.mvMatrixStack.addTranslation({pos_pnj[0], pos_pnj[1], pos_pnj[2] - 1.9f});
 		myEngine.mvMatrixStack.addRotation(M_PI / 180.f * angle_pnj, {0.0f, 0.0f, 1.0f});
 		myEngine.updateMvMatrix();

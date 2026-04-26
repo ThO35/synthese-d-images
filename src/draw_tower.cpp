@@ -164,8 +164,12 @@ void base_tour(){
 	myEngine.mvMatrixStack.pushMatrix();
 		myEngine.activateTexturing(true);
 		textures["marbre"].attachTexture();
-		myEngine.setShininess(80.0f); 
-		myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
+		auto shading = myEngine.currentShader;
+		if (shading == 1)
+		{
+			myEngine.setShininess(80.0f); 
+			myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
+		}
 		myEngine.setFlatColor(0,256,0);
 		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
 		myEngine.mvMatrixStack.addTranslation({2.,1.,2.});
@@ -195,8 +199,12 @@ void tour (float taille){
 	myEngine.mvMatrixStack.pushMatrix();
 		myEngine.activateTexturing(true);
 		textures["marbre"].attachTexture();
-		myEngine.setShininess(80.0f); 
-		myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
+		auto shading = myEngine.currentShader;
+		if (shading == 1)
+		{
+			myEngine.setShininess(80.0f); 
+			myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
+		}
 		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
 		myEngine.mvMatrixStack.addTranslation({2.,taille+1,2.});
 		myEngine.mvMatrixStack.addHomothety({1.5f ,0.01f, 1.5f});
@@ -280,6 +288,9 @@ void tour_de_sauron() {
         random1 = (int)rand();
         random2 = (int)rand();
     }
+
+	auto shading = myEngine.currentShader;
+	if (shading == 1) myEngine.switchToFlatShading();
 	myEngine.mvMatrixStack.pushMatrix();
         myEngine.mvMatrixStack.addTranslation({2.0f, -2.0, 9.0f});
 
@@ -289,4 +300,5 @@ void tour_de_sauron() {
         
         eye();
     myEngine.mvMatrixStack.popMatrix();
+	if (shading == 1) myEngine.switchToPhongShading();
 }

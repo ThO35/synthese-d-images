@@ -265,6 +265,7 @@ void draw_skybox()
 
 void show_trajectory()
 {
+	myEngine.setFlatColor(0.8f, 0.0f, 0.0f);
 	for (; !trajectory.simule(0.05f);)
 	{
 		myEngine.mvMatrixStack.pushMatrix();
@@ -335,7 +336,6 @@ void drawScene()
 	 	tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
  		myEngine.mvMatrixStack.popMatrix();
 	}
-	myEngine.switchToFlatShading();
 
 	myEngine.mvMatrixStack.pushMatrix();
 		trajectory.update(0.001f);
@@ -351,8 +351,14 @@ void drawScene()
 		myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.popMatrix();
 
-	if (detail_mod) show_trajectory();
-	tour_de_sauron();
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addTranslation({-50.0f, 75.0f, -19.0f});
+		myEngine.mvMatrixStack.addRotation(M_PI, {0.0f, 0.0f, 1.0f});
+		myEngine.mvMatrixStack.addHomothety({5.0f, 5.0f, 5.0f});
+		tour_de_sauron();
+	myEngine.mvMatrixStack.popMatrix();
 	
 	if (activeShader) myEngine.switchToFlatShading();
+
+	if (detail_mod) show_trajectory();
 }

@@ -1,6 +1,20 @@
 #include"draw_tower.hpp"
 
 
+STP3D::Vector4D fpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos,float posY, float posZ) {
+    float tmp[16];
+    viewMatrix.get(tmp); 
+
+    float dx = viewPos[0] - tmp[12];
+    float dy = viewPos[1] - tmp[13];
+    float dz = viewPos[2] - tmp[14];
+
+    float x = dx * tmp[0] + dy * tmp[1] + dz * tmp[2];
+    float y = (dx * tmp[4] + dy * tmp[5] + dz * tmp[6])+posY;
+    float z = (dx * tmp[8] + dy * tmp[9] + dz * tmp[10]) + posZ;
+
+    return STP3D::Vector4D(x, y, z, 1.0f);
+}
 
 void pilier_arc(float debut, float fin, float rayon){
 	for (float j = 0; j <= 100; j++) {
@@ -40,8 +54,6 @@ void iris() {
     myEngine.mvMatrixStack.addTranslation({-0.9f, 0.0f, 0.0f});
     myEngine.updateMvMatrix();
     myEngine.switchToPhongShading();
-    myEngine.setLightIntensity({100.0f, 0.0f, 0.0f}, 5);
-    myEngine.setLightPosition({-1.2f, 0.0f, 0.0f, 1.0f}, 5);
     myEngine.setFlatColor(0.0f, 0.0f, 0.0f); 
     myEngine.mvMatrixStack.addHomothety( 0.17f);
     myEngine.mvMatrixStack.addHomothety({1.0f, 1.0f, 4.5f});
@@ -52,8 +64,21 @@ void iris() {
 }
 
 void eye (){
+	auto shading = myEngine.currentShader;
+	if (shading == 1)
+	{
+		auto currentMatrix = myEngine.mvMatrixStack.stack.back(); 
+		auto localOrigin = STP3D::Vector4D(0.0f, 0.0f, 0.0f, 1.0f);
+		
 
-
+		auto view = currentMatrix * localOrigin;
+		auto lightPos = fpsPosition(myEngine.viewMatrix, view ,0 ,0); 
+		
+		myEngine.setLightPosition(lightPos, 5);
+		myEngine.setLightIntensity({1000.0f, 0.0f, 0.0f}, 5);
+		myEngine.switchToFlatShading();
+	}
+	
 	myEngine.activateTexturing(true);
 	textures["feu"].attachTexture();
 	myEngine.mvMatrixStack.pushMatrix();
@@ -95,6 +120,7 @@ void eye (){
 		
 	myEngine.mvMatrixStack.popMatrix();
 	iris();
+	if (shading == 1) myEngine.switchToPhongShading();
 }
 
 void pilier(float rayon, float hauteur) {
@@ -289,8 +315,6 @@ void tour_de_sauron() {
         random2 = (int)rand();
     }
 
-	auto shading = myEngine.currentShader;
-	if (shading == 1) myEngine.switchToFlatShading();
 	myEngine.mvMatrixStack.pushMatrix();
         myEngine.mvMatrixStack.addTranslation({2.0f, -2.0, 9.0f});
 
@@ -300,5 +324,4 @@ void tour_de_sauron() {
         
         eye();
     myEngine.mvMatrixStack.popMatrix();
-	if (shading == 1) myEngine.switchToPhongShading();
 }

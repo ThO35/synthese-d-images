@@ -7,6 +7,7 @@
 #include "draw_pnj.hpp"
 #include "tree.hpp"
 
+
 // Order UVs
 const float UVS[4][2] = {{0.0f, 0.0f}, {0.0f, 1.0f}, {1.0f, 1.0f}, {1.0f, 0.0f}};
 
@@ -89,6 +90,12 @@ void initTextures()
 	init_texture("../assets/textures/sand.png", "sand");
 	init_texture("../assets/textures/sun.png", "sun");
 	init_texture("../assets/textures/skybox.png", "skybox");
+
+	init_texture("../assets/textures/rempart.jpg", "rempart");
+	init_texture("../assets/textures/feux.jpg", "feu");
+	init_texture("../assets/textures/toi.jpg", "toi");
+	init_texture("../assets/textures/marbre.jpg", "marbre");
+	init_texture("../assets/textures/mur.jpg", "mur");
 }
 
 void initTerrain()
@@ -326,6 +333,7 @@ void drawScene()
 	 	tree_minecraft(static_cast<int>(zero[3]), static_cast<int>(zero[4]));
  		myEngine.mvMatrixStack.popMatrix();
 	}
+	myEngine.switchToFlatShading();
 
 	myEngine.mvMatrixStack.pushMatrix();
 		trajectory.update(0.001f);
@@ -342,8 +350,9 @@ void drawScene()
 	myEngine.mvMatrixStack.popMatrix();
 
 
-	// show_trajectory();
 
+	// show_trajectory();
+	tour_de_sauron();
 	
 	if (activeShader) myEngine.switchToFlatShading();
 }

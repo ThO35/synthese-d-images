@@ -1,6 +1,22 @@
 #include "draw_pnj.hpp"
 
 
+STP3D::Vector4D FpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos) {
+    float tmp[16];
+    viewMatrix.get(tmp); 
+
+    float dx = viewPos[0] - tmp[12];
+    float dy = viewPos[1] - tmp[13];
+    float dz = viewPos[2] - tmp[14];
+
+    float x = dx * tmp[0] + dy * tmp[1] + dz * tmp[2];
+    float y = dx * tmp[4] + dy * tmp[5] + dz * tmp[6];
+    float z = dx * tmp[8] + dy * tmp[9] + dz * tmp[10];
+
+    return STP3D::Vector4D(x, y, z, 1.0f);
+}
+
+
 void draw_lantern(int first_id_light, int nb_light)
 {
 	auto posX = 0.0f;
@@ -11,17 +27,23 @@ void draw_lantern(int first_id_light, int nb_light)
 	if (shading == 1) {
 		for (auto i = first_id_light; i < first_id_light + nb_light; i++)
 		{
+            auto currentMatrix = myEngine.mvMatrixStack.stack.back(); 
+            auto localOrigin = STP3D::Vector4D(0.0f, 0.0f, 0.0f, 1.0f);
+            
+
+            auto view = currentMatrix * localOrigin;
+            auto lightPos = FpsPosition(myEngine.viewMatrix, view); 
 
 			auto offset = i * 2.3f;
 			auto time = glfwGetTime() * 8.0f + offset;
 			auto flicker = std::sin(time) + std::sin(time * 2.1f) * 0.5f + std::cos(time * 3.7f) * 0.25f;
-			auto intensity = 1.0f + (flicker * 0.15f);
-
+           
+            auto intensity = (1.0f + (flicker * 0.15f))*20;
 			auto r = 1.0f * intensity;
 			auto g = (0.4f + flicker * 0.1f) * intensity;
 			auto b = 0.05f * intensity;
             
-			myEngine.setLightPosition(STP3D::Vector4D(posX, posY, posZ, 1.0f), i);
+			myEngine.setLightPosition(lightPos, i);
 			myEngine.setLightIntensity(STP3D::Vector3D(r, g, b), i);
 		}
 		myEngine.switchToFlatShading();

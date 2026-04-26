@@ -32,6 +32,68 @@ void pilier_arc(float debut, float fin, float rayon){
     }
 }
 
+
+void iris (float angle){
+
+		
+	myEngine.mvMatrixStack.pushMatrix();
+	
+		myEngine.setFlatColor(0,0,0);
+		myEngine.mvMatrixStack.addTranslation({1.1f, -2.0, 9.0f});
+		myEngine.mvMatrixStack.addRotation(angle,{0.0,0.0,1.0});
+		myEngine.mvMatrixStack.addHomothety(0.17);
+		myEngine.mvMatrixStack.addHomothety({1,1,4.5});
+		myEngine.updateMvMatrix();
+		sphere->draw();
+	myEngine.mvMatrixStack.popMatrix();
+	
+	
+}
+
+void eye (){
+	myEngine.activateTexturing(true);
+	textures["feu"].attachTexture();
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.mvMatrixStack.addTranslation({2.0f,-1.5, 9.0f});
+	myEngine.mvMatrixStack.addHomothety({0.86f, 1, 0.86f});
+	myEngine.updateMvMatrix();
+	myEngine.setFlatColor(0, 0, 1);
+	cone->draw();
+	myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.pushMatrix();
+	myEngine.mvMatrixStack.addRotation((M_PI),{1.0,0.0,0.0});
+	myEngine.mvMatrixStack.addTranslation({2.0f, 2.5, -9.0f});
+	myEngine.mvMatrixStack.addHomothety({0.86f, 1, 0.86f});
+	myEngine.updateMvMatrix();
+	myEngine.setFlatColor(1, 0, 0);
+	cone->draw();
+	myEngine.mvMatrixStack.popMatrix();
+	myEngine.activateTexturing(false);
+	textures["feu"].attachTexture();
+	
+
+	auto angle  = glfwGetTime();
+
+	myEngine.mvMatrixStack.pushMatrix();
+
+
+
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.activateTexturing(true);
+			textures["feu"].attachTexture();
+			myEngine.mvMatrixStack.addTranslation({2.0f, -2.0, 9.0f});
+			myEngine.mvMatrixStack.addRotation(angle,{0.0,0.0,1.0});
+			myEngine.updateMvMatrix();
+			myEngine.setFlatColor(0, 1, 0);
+			sphere->draw();
+			myEngine.activateTexturing(false);
+			textures["feu"].attachTexture();
+		myEngine.mvMatrixStack.popMatrix();
+	
+		iris(angle);
+	myEngine.mvMatrixStack.popMatrix();
+}
+
 void pilier(float rayon, float hauteur) {
     auto nb_piliers = 12; 
     
@@ -84,50 +146,127 @@ void rempart(float rayon, int taille) {
 
 void base_tour(){
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.setFlatColor(256,256,256);
-	myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
-	myEngine.mvMatrixStack.addTranslation({2.,0.,2.});
-	myEngine.mvMatrixStack.addHomothety({4,1,4});
-	myEngine.updateMvMatrix();
-	cylindre->draw();
+		myEngine.activateTexturing(true);
+		textures["mur"].attachTexture();
+		myEngine.setFlatColor(256,256,256);
+		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
+		myEngine.mvMatrixStack.addTranslation({2.,0.,2.});
+		myEngine.mvMatrixStack.addHomothety({4,1,4});
+		myEngine.updateMvMatrix();
+		cylindre->draw();
+		myEngine.activateTexturing(false);
+		textures["mur"].attachTexture();
 	myEngine.mvMatrixStack.popMatrix();
 
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.setFlatColor(0,256,0);
-	myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
-	myEngine.mvMatrixStack.addTranslation({2.,1.,2.});
-	myEngine.mvMatrixStack.addHomothety({2.,0.01,2.});
-	myEngine.updateMvMatrix();
-	cone->draw();
+		myEngine.activateTexturing(true);
+		textures["marbre"].attachTexture();
+		myEngine.setShininess(80.0f); 
+		myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
+		myEngine.setFlatColor(0,256,0);
+		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
+		myEngine.mvMatrixStack.addTranslation({2.,1.,2.});
+		myEngine.mvMatrixStack.addHomothety({2.,0.01,2.});
+		myEngine.updateMvMatrix();
+		cone->draw();
+		myEngine.activateTexturing(false);
+		textures["marbre"].attachTexture();
 	myEngine.mvMatrixStack.popMatrix();
 }
 
 void tour (float taille){
 	base_tour();
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.setFlatColor(256,256,256);
-	myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
-	myEngine.mvMatrixStack.addTranslation({2.0f,1.0f,2.0f});
-	myEngine.mvMatrixStack.addHomothety({2.0f,taille,2.0f});
-	myEngine.updateMvMatrix();
-	cylindre->draw();
+		myEngine.activateTexturing(true);
+		textures["mur"].attachTexture();
+		myEngine.setFlatColor(256,256,256);
+		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
+		myEngine.mvMatrixStack.addTranslation({2.0f,1.0f,2.0f});
+		myEngine.mvMatrixStack.addHomothety({2.0f,taille,2.0f});
+		myEngine.updateMvMatrix();
+		cylindre->draw();
+		myEngine.activateTexturing(false);
+		textures["mur"].attachTexture();
 	myEngine.mvMatrixStack.popMatrix();
 
 	myEngine.mvMatrixStack.pushMatrix();
-		myEngine.setFlatColor(0,0,256);
+		myEngine.activateTexturing(true);
+		textures["marbre"].attachTexture();
+		myEngine.setShininess(80.0f); 
+		myEngine.setSpecularColor(STP3D::Vector3D(0.6f, 0.6f, 0.6f));
 		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
 		myEngine.mvMatrixStack.addTranslation({2.,taille+1,2.});
 		myEngine.mvMatrixStack.addHomothety({1.5f ,0.01f, 1.5f});
 		myEngine.updateMvMatrix();
 		cone->draw();
+		myEngine.activateTexturing(false);
+		textures["marbre"].attachTexture();
 	myEngine.mvMatrixStack.popMatrix();
 
+
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.activateTexturing(true);
+			textures["mur"].attachTexture();
+		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
+		myEngine.mvMatrixStack.addTranslation({1.0f,0.0f,0.2f});
+		myEngine.mvMatrixStack.addHomothety({0.5f ,1.0f, 0.5f});
+		myEngine.updateMvMatrix();
+		cylindre->draw();
+			myEngine.activateTexturing(false);
+			textures["mur"].attachTexture();
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.activateTexturing(true);
+			textures["toi"].attachTexture();
+			myEngine.setFlatColor(256,0,0);
+			myEngine.mvMatrixStack.addTranslation({0.0f,0.9f,0.0f});
+			myEngine.mvMatrixStack.addHomothety({0.6f ,0.8f, 0.6f});
+			myEngine.updateMvMatrix();
+			cone->draw();
+			myEngine.activateTexturing(false);
+			textures["toi"].attachTexture();
+		myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.popMatrix();
+
+
+	myEngine.mvMatrixStack.pushMatrix();
+			myEngine.setFlatColor(0,0,256);
+				myEngine.activateTexturing(true);
+			textures["mur"].attachTexture();
+		myEngine.mvMatrixStack.addRotation(M_PI/2,{1.0f,0.0f,0.0f});
+		myEngine.mvMatrixStack.addTranslation({0.2f,0.0f,1.0f});
+		myEngine.mvMatrixStack.addHomothety({0.5f ,1.0f, 0.5f});
+		myEngine.updateMvMatrix();
+		cylindre->draw();
+			myEngine.activateTexturing(false);
+			textures["mur"].attachTexture();
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.activateTexturing(true);
+			textures["toi"].attachTexture();
+			myEngine.setFlatColor(256,0,0);
+			myEngine.mvMatrixStack.addTranslation({0.0f,0.9f,0.0f});
+			myEngine.mvMatrixStack.addHomothety({0.6f ,0.8f, 0.6f});
+			myEngine.updateMvMatrix();
+			cone->draw();
+			myEngine.activateTexturing(false);
+			textures["toi"].attachTexture();
+		myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.popMatrix();
 	
 }
 
+
 void tour_de_sauron() {
+
+	myEngine.activateTexturing(true);
+	textures["rempart"].attachTexture();
     rempart(5.,3);
 	rempart(8.,1);
 	pilier(5.75,3);
+	myEngine.activateTexturing(false);
+	textures["rempart"].attachTexture();
 	tour (6);
+
+	
+
+	eye();
 }

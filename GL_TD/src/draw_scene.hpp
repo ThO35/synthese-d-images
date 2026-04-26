@@ -10,6 +10,7 @@
 #include "tools/stb_image.h"
 #include "utils.hpp"
 #include <array>
+#include <unordered_map>
 using namespace glbasimac;
 
 /* Camera parameters and functions */
@@ -30,6 +31,7 @@ extern unsigned char minVal;
 extern int length, width;
 extern std::vector<char> donnes;
 extern double scaling;
+extern std::unordered_map<std::string, GLBI_Texture> textures;
 
 void initScene();
 

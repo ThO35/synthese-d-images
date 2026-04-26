@@ -5,6 +5,7 @@
 #include "GLFW/glfw3.h"
 using namespace glbasimac;
 
+
 /* OpenGL Engine */
 extern GLBI_Engine myEngine;
 
@@ -14,6 +15,9 @@ extern STP3D::IndexedMesh  *cube;
 extern STP3D::IndexedMesh  *sphere;
 extern STP3D::IndexedMesh  *cylindre;
 extern STP3D::StandardMesh *cone;
+
+extern Vector3D pos_pnj;
+extern float angle_pnj;
 
 extern bool in_mouvement;
 

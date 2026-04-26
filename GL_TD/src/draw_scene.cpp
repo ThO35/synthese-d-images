@@ -2,7 +2,9 @@
 
 #include "draw_scene.hpp"
 #include "spline.hpp"
+#include "draw_sandBird.hpp"
 #include "draw_tower.hpp"
+#include "draw_pnj.hpp"
 #include "tree.hpp"
 
 // Order UVs
@@ -146,7 +148,7 @@ void initScene()
 
 
 
-void moon()
+void draw_moon()
 {
 	float angle = (((M_PI / 180.0) * glfwGetTime() * 15.0) + M_PI);
 
@@ -179,7 +181,7 @@ void moon()
 
 
 
-void sun()
+void draw_sun()
 {
 
 	float angle = (M_PI / 180.0f) * glfwGetTime() * 15;
@@ -212,6 +214,25 @@ void sun()
 	if (shading == 1) myEngine.switchToPhongShading();
 }
 
+
+void draw_skybox()
+{
+	auto shading = myEngine.currentShader;
+	if (shading == 1) myEngine.switchToFlatShading();
+
+	myEngine.activateTexturing(true);
+	textures["skybox"].attachTexture();
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addRotation(M_PI / 2.0f, {0.0f, 1.0f, 0.0f});
+		myEngine.updateMvMatrix();
+		sphere->draw();
+	myEngine.mvMatrixStack.popMatrix();
+	textures["skybox"].detachTexture();
+	myEngine.activateTexturing(false);
+
+	if (shading == 1) myEngine.switchToPhongShading();
+}
+
 void show_trajectory()
 {
 	for (; !trajectory.simule(0.05f);)
@@ -225,108 +246,43 @@ void show_trajectory()
 	}
 }
 
-void batton_de_papa()
+
+void draw_terrain()
 {
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.mvMatrixStack.addRotation(M_PI / 2, Vector3D(1.0, 0.0, 0.0));
-	myEngine.mvMatrixStack.addHomothety(Vector3D(0.1, 9, 0.1));
-	myEngine.updateMvMatrix();
-	cylindre->draw();
-	myEngine.mvMatrixStack.popMatrix();
+		myEngine.activateTexturing(true);
+		textures["grass"].attachTexture();
 
-	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 8.99f});
-	myEngine.mvMatrixStack.addRotation(M_PI / 2.0f, {1.0f, 0.0f, 0.0f});
-	for (int i = 0; i < 24; i++)
-	{
-		myEngine.mvMatrixStack.pushMatrix();
-		myEngine.mvMatrixStack.addRotation((M_PI / 24 * 2), Vector3D(1.0, 0.0, 0.0));
-		myEngine.mvMatrixStack.pushMatrix();
-		myEngine.mvMatrixStack.addHomothety({0.1, 0.20, 0.1});
+		auto shading = myEngine.currentShader;
+		std::cout << " " << shading << std::endl;
+		if (shading == 1)
+		{
+			myEngine.setShininess(2.0f);
+			myEngine.setSpecularColor(STP3D::Vector3D(0.02f, 0.05f, 0.02f));
+		}
+		
 		myEngine.updateMvMatrix();
-		cylindre->draw();
-		myEngine.mvMatrixStack.popMatrix();
-		myEngine.mvMatrixStack.addTranslation(Vector3D(0, 0.18, 0));
-	}
-	for (int i = 0; i < 24; i++)
-	{
-		myEngine.mvMatrixStack.popMatrix();
-	}
-
+		grass.draw();
+		textures["grass"].detachTexture();
+		myEngine.activateTexturing(false);
 	myEngine.mvMatrixStack.popMatrix();
 }
-void lantern()
-{
-	myEngine.switchToPhongShading();
 
-	auto posX = 0.0f;
-	auto posY = static_cast<float>(-(M_PI / 12.0 * 2.5) - 0.05);
-	auto posZ = 8.9f;
 
-	for (auto i = 2; i < 6; i++)
-	{
-
-		auto offset = i * 2.3f;
-		auto time = glfwGetTime() * 8.0f + offset;
-		auto flicker = std::sin(time) + std::sin(time * 2.1f) * 0.5f + std::cos(time * 3.7f) * 0.25f;
-		auto intensity = 1.0f + (flicker * 0.15f);
-
-		auto r = 1.0f * intensity;
-		auto g = (0.4f + flicker * 0.1f) * intensity;
-		auto b = 0.05f * intensity;
-
-		myEngine.setLightPosition(STP3D::Vector4D(posX, posY, posZ, 1.0f), i);
-		myEngine.setLightIntensity(STP3D::Vector3D(r, g, b), i);
-	}
-
-	myEngine.switchToFlatShading();
-	myEngine.mvMatrixStack.pushMatrix();
-
-	myEngine.mvMatrixStack.addTranslation(STP3D::Vector3D(posX, posY, posZ));
-	myEngine.setFlatColor(1, 1, 1);
-	auto scaleFixe = 0.4f;
-	myEngine.mvMatrixStack.addHomothety(scaleFixe);
-	myEngine.updateMvMatrix();
-
-	sphere->draw();
-
-	myEngine.mvMatrixStack.popMatrix();
-}
 void drawScene()
 {
+	if (activeShader) myEngine.switchToPhongShading();
 
-	//lantern();
-	//moon();
-	//sun();
-	tour_de_sauron();
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addHomothety({length * 1.1f, length * 1.1f, length * 1.1f});
+		draw_skybox();
+	myEngine.mvMatrixStack.popMatrix();
 
-	// myEngine.activateTexturing(true);
-	// textures["skybox"].attachTexture();
-	// myEngine.mvMatrixStack.pushMatrix();
-	// myEngine.mvMatrixStack.addHomothety({length * 1.1f, length * 1.1f, length * 1.1f});
-	// myEngine.mvMatrixStack.addRotation(M_PI / 2.0f, {0.0f, 1.0f, 0.0f});
-	// myEngine.updateMvMatrix();
-	// sphere->draw();
-	// myEngine.mvMatrixStack.popMatrix();
-	// textures["skybox"].detachTexture();
-	// myEngine.activateTexturing(false);
-
-	// myEngine.switchToPhongShading();
-
-	// batton_de_papa();
-	// myEngine.mvMatrixStack.pushMatrix();
-	// myEngine.activateTexturing(true);
-	// textures["grass"].attachTexture();
-
-	// myEngine.setShininess(2.0f);
-	// myEngine.setSpecularColor(STP3D::Vector3D(0.02f, 0.05f, 0.02f));
-
-	// myEngine.updateMvMatrix();
-	// grass.draw();
-	// textures["grass"].detachTexture();
-	// myEngine.activateTexturing(false);
-	// myEngine.mvMatrixStack.popMatrix();
-	// sapin();
+	draw_sun();
+	draw_moon();
+	draw_terrain();
+	
+	
 
 	for (const auto &zero : zeroPosition)
 	{
@@ -337,29 +293,29 @@ void drawScene()
  		myEngine.mvMatrixStack.popMatrix();
 	}
 
-	// myEngine.mvMatrixStack.pushMatrix();
-	// trajectory.update(0.001f);
-	// myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
-	// myEngine.mvMatrixStack.addRotation(trajectory.getAzimuthal(), {0.0f, 0.0f, 1.0f});
-	// myEngine.mvMatrixStack.addRotation(-trajectory.getElevation(), {0.0f, 1.0f, 0.0f});
-	// myEngine.mvMatrixStack.pushMatrix();
-	// myEngine.activateTexturing(true);
-	// textures["sand"].attachTexture();
-	// drawSandBird();
-	// textures["sand"].detachTexture();
-	// myEngine.activateTexturing(false);
-	// myEngine.mvMatrixStack.popMatrix();
-	// myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.pushMatrix();
+		trajectory.update(0.001f);
+		myEngine.mvMatrixStack.addTranslation(trajectory.getPosition());
+		myEngine.mvMatrixStack.addRotation(trajectory.getAzimuthal(), {0.0f, 0.0f, 1.0f});
+		myEngine.mvMatrixStack.addRotation(-trajectory.getElevation(), {0.0f, 1.0f, 0.0f});
+		myEngine.mvMatrixStack.pushMatrix();
+			myEngine.activateTexturing(true);
+			textures["sand"].attachTexture();
+			drawSandBird();
+			textures["sand"].detachTexture();
+			myEngine.activateTexturing(false);
+		myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.popMatrix();
 
-	// myEngine.switchToFlatShading();
+	if (activeShader) myEngine.switchToFlatShading();
 
 	// show_trajectory();
 
-	// myEngine.mvMatrixStack.pushMatrix();
-	// myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
-	// myEngine.updateMvMatrix();
-	// drawPNJ();
-	// myEngine.mvMatrixStack.popMatrix();
+	myEngine.mvMatrixStack.pushMatrix();
+		myEngine.mvMatrixStack.addTranslation({0.0f, 0.0f, 25.0f});
+		myEngine.updateMvMatrix();
+		drawPNJ(2, 4);
+	myEngine.mvMatrixStack.popMatrix();
 }
 
 void update_altitude()

@@ -6,8 +6,12 @@ void leaf_minecraf(int sizeTree, int seed)
 	float cubeSize = 1.0f;
 	float rayon = (sizeTree / 4.0f) + 1.0f;
 	myEngine.setFlatColor(1, 0.0, 0.);
-	myEngine.setShininess(25.0f);
-	myEngine.setSpecularColor(STP3D::Vector3D(0.15f, 0.15f, 0.15f));
+	auto shading = myEngine.currentShader;
+	if (shading)
+	{
+		myEngine.setShininess(25.0f);
+		myEngine.setSpecularColor(STP3D::Vector3D(0.15f, 0.15f, 0.15f));
+	}
 	for (int z = -rayon; z <= rayon; z++)
 	{
 		for (int x = -rayon; x <= rayon; x++)
@@ -41,10 +45,12 @@ void tree_minecraft(int hauteur, int seed)
 	textures["wood"].attachTexture();
 	float cubeSize = 1.0f;
 	myEngine.setFlatColor(0., 0., 1);
-
-	myEngine.setShininess(5.0f);
-	myEngine.setSpecularColor(STP3D::Vector3D(0.05f, 0.05f, 0.05f));
-
+	auto shading = myEngine.currentShader;
+	if (shading)
+	{
+		myEngine.setShininess(5.0f);
+		myEngine.setSpecularColor(STP3D::Vector3D(0.05f, 0.05f, 0.05f));
+	}
 	for (int i = 0; i < hauteur; i++)
 	{
 		myEngine.mvMatrixStack.pushMatrix();

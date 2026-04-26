@@ -109,10 +109,10 @@ void initTerrain()
 	{
 		for (int j = 0; j < width - 1; j++)
 		{
-			int coord_A = (i * 256) + j;
-			int coord_B = (i * 256) + (j + 1);
-			int coord_C = ((i + 1) * 256) + j;
-			int coord_D = ((i + 1) * 256) + (j + 1);
+			int coord_A = (i * width) + j;
+			int coord_B = (i * width) + (j + 1);
+			int coord_C = ((i + 1) * width) + j;
+			int coord_D = ((i + 1) * width) + (j + 1);
 
 			float h_A = donnes[coord_A] == 0 ? tree_hauteur(i, j) : static_cast<float>(static_cast<unsigned char>(donnes[coord_A]));
 			float h_B = donnes[coord_B] == 0 ? tree_hauteur(i, j + 1) : static_cast<float>(static_cast<unsigned char>(donnes[coord_B]));

@@ -26,7 +26,7 @@ float tree_hauteur(int i, int j)
 
     if (i - 1 >= 0)
     {
-        int nord = ((i - 1) * 256) + j;
+        int nord = ((i - 1) * width) + j;
         if (static_cast<float>(static_cast<unsigned char>(donnes[nord])) != 0)
         {
             point_adjacent.push_back(static_cast<float>(static_cast<unsigned char>(donnes[nord])));
@@ -34,7 +34,7 @@ float tree_hauteur(int i, int j)
     }
     if (j - 1 >= 0)
     {
-        int ouest = (i * 256) + (j - 1);
+        int ouest = (i * width) + (j - 1);
         if (static_cast<float>(static_cast<unsigned char>(donnes[ouest])) != 0)
         {
             point_adjacent.push_back(static_cast<float>(static_cast<unsigned char>(donnes[ouest])));
@@ -43,7 +43,7 @@ float tree_hauteur(int i, int j)
 
     if (i + 1 <= length)
     {
-        int sud = ((i + 1) * 256) + j;
+        int sud = ((i + 1) * width) + j;
         if (static_cast<float>(static_cast<unsigned char>(donnes[sud])) != 0)
         {
             point_adjacent.push_back(static_cast<float>(static_cast<unsigned char>(donnes[sud])));
@@ -51,7 +51,7 @@ float tree_hauteur(int i, int j)
     }
     if (j + 1 <= width)
     {
-        int est = (i * 256) + (j + 1);
+        int est = (i * width) + (j + 1);
         if (static_cast<float>(static_cast<unsigned char>(donnes[est])) != 0)
         {
             point_adjacent.push_back(static_cast<float>(static_cast<unsigned char>(donnes[est])));

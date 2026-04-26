@@ -22,6 +22,7 @@ extern float angle_vertical;   // Angle between z axis and viewpoint
 extern float speed;            // Camera movement speed
 extern bool is_ground_view;
 extern bool activeShader;      // Active shader phong
+extern bool detail_mod;
 
 /* OpenGL Engine */
 extern GLBI_Engine myEngine;

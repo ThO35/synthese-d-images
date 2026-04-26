@@ -87,7 +87,21 @@ STP3D::Vector3D Spline::interpolation(double step) const
     auto u = step - i;
     auto i1 = (i + 1) % _size;
 
-    auto interp = [&](double p0, double p1, double M0, double M1)
+    if (_pts[i1].w == 1)
+    {
+        auto interp_line = [&](double p0, double p1)
+        {
+            auto b = u;
+            return p0 + (p1 - p0) * b;
+        };
+
+        return {
+            (float) interp_line(_pts[i].x, _pts[i1].x),
+            (float) interp_line(_pts[i].y, _pts[i1].y),
+            (float) interp_line(_pts[i].z, _pts[i1].z)
+        };
+    }
+    auto interp_spline = [&](double p0, double p1, double M0, double M1)
     {
         auto a = (1.0f - u);
         auto b = u;
@@ -97,10 +111,9 @@ STP3D::Vector3D Spline::interpolation(double step) const
             ((a * a * a - a) * M0 +
              (b * b * b - b) * M1) * (1.0f / 6.0f);
     };
-
     return {
-        (float) interp(_pts[i].x, _pts[i1].x, _Mx[i], _Mx[i1]),
-        (float) interp(_pts[i].y, _pts[i1].y, _My[i], _My[i1]),
-        (float) interp(_pts[i].z, _pts[i1].z, _Mz[i], _Mz[i1])
+        (float) interp_spline(_pts[i].x, _pts[i1].x, _Mx[i], _Mx[i1]),
+        (float) interp_spline(_pts[i].y, _pts[i1].y, _My[i], _My[i1]),
+        (float) interp_spline(_pts[i].z, _pts[i1].z, _Mz[i], _Mz[i1])
     };
 }

@@ -2,14 +2,15 @@
 
 #include <vector>
 #include "tools/vector3d.hpp"
+#include "tools/vector4d.hpp"
 
 class Spline
 {
 public:
-    Spline(const std::vector<STP3D::Vector3D>& pts)
+    Spline(const std::vector<STP3D::Vector4D>& pts)
     : _pts  { pts }
     , _size { (int) pts.size() - 1 }
-    , _position { _pts.at(0) }
+    , _position { STP3D::Vector3D(pts.at(0).x, pts.at(0).y, pts.at(0).z) }
     { init(); }
 
     void update(double dist);
@@ -21,7 +22,7 @@ public:
     const STP3D::Vector3D& getSimulPosition() const { return _simul_position; }
 
 private:
-    std::vector<STP3D::Vector3D> _pts;
+    std::vector<STP3D::Vector4D> _pts;
     std::vector<double> _Mx, _My, _Mz;
     int _size;
     double _speed = 1.0f;

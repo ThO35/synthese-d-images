@@ -20,15 +20,17 @@ Vector3D pos_pnj = Vector3D(0.0f, 0.0f, 0.0f);
 float angle_pnj{0.0f};
 
 std::vector<float> points{};
-Spline trajectory({{0, 0, 20},
-				   {100, 50, 25},
-				   {0, 100, 30},
-				   {-100, 50, 35},
-				   {0, 0, 40},
-				   {100, -50, 35},
-				   {0, -100, 30},
-				   {-100, -50, 25},
-				   {0, 0, 20}});
+Spline trajectory({{0,    0,    20, 0},
+				   {100,  50,   25, 0},
+				   {50,   100,  30, 0},
+				   {-50,  100,  30, 1},
+				   {-100, 50,   35, 0},
+				   {0,    0,    40, 0},
+				   {100,  -50,  35, 0},
+				   {50,   -100, 30, 0},
+				   {-50,  -100, 30, 1},
+				   {-100, -50,  25, 0},
+				   {0,    0,    20, 0}});
 
 GLBI_Engine myEngine;
 
@@ -349,9 +351,7 @@ void drawScene()
 		myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.popMatrix();
 
-
-
-	// show_trajectory();
+	if (detail_mod) show_trajectory();
 	tour_de_sauron();
 	
 	if (activeShader) myEngine.switchToFlatShading();

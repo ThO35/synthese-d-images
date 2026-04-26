@@ -34,7 +34,7 @@ IndexedMesh *circle;
 unsigned char minVal = 255;
 int length, width;
 std::vector<char> donnes;
-double scaling = 0.1;
+double scaling = 0.06;
 bool is_ground_view = false;
 bool detail_mod = false;
 bool activeShader = false;

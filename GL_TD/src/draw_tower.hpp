@@ -23,4 +23,9 @@ extern STP3D::IndexedMesh  *cylindre;
 extern STP3D::StandardMesh *cone;
 extern std::unordered_map<std::string, GLBI_Texture> textures;
 
+static float next_change = 0.0f;
+static float angle = 0.0f;
+static int random1 =0;
+static int random2 =0;
+
 void tour_de_sauron();

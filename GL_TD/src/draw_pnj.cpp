@@ -1,7 +1,7 @@
 #include "draw_pnj.hpp"
 
 
-STP3D::Vector4D FpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos) {
+STP3D::Vector4D FpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vector4D& viewPos,float posY, float posZ) {
     float tmp[16];
     viewMatrix.get(tmp); 
 
@@ -10,8 +10,8 @@ STP3D::Vector4D FpsPosition(const STP3D::Matrix4D& viewMatrix, const STP3D::Vect
     float dz = viewPos[2] - tmp[14];
 
     float x = dx * tmp[0] + dy * tmp[1] + dz * tmp[2];
-    float y = dx * tmp[4] + dy * tmp[5] + dz * tmp[6];
-    float z = dx * tmp[8] + dy * tmp[9] + dz * tmp[10];
+    float y = (dx * tmp[4] + dy * tmp[5] + dz * tmp[6])+posY;
+    float z = (dx * tmp[8] + dy * tmp[9] + dz * tmp[10]) + posZ;
 
     return STP3D::Vector4D(x, y, z, 1.0f);
 }
@@ -32,13 +32,13 @@ void draw_lantern(int first_id_light, int nb_light)
             
 
             auto view = currentMatrix * localOrigin;
-            auto lightPos = FpsPosition(myEngine.viewMatrix, view); 
+            auto lightPos = FpsPosition(myEngine.viewMatrix, view ,posY, posZ ); 
 
 			auto offset = i * 2.3f;
 			auto time = glfwGetTime() * 8.0f + offset;
-			auto flicker = std::sin(time) + std::sin(time * 2.1f) * 0.5f + std::cos(time * 3.7f) * 0.25f;
+			auto flicker = std::sin(time) + std::sin(time * 1.8f) * 0.45f + std::cos(time * 3.4f) * 0.22f;
            
-            auto intensity = (1.0f + (flicker * 0.15f))*20;
+            auto intensity = (1.0f + (flicker * 0.15f))*10;
 			auto r = 1.0f * intensity;
 			auto g = (0.4f + flicker * 0.1f) * intensity;
 			auto b = 0.05f * intensity;

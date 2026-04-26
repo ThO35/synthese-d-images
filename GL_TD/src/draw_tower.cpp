@@ -1,5 +1,7 @@
 #include"draw_tower.hpp"
 
+
+
 void pilier_arc(float debut, float fin, float rayon){
 	for (float j = 0; j <= 100; j++) {
 		auto t = j / 100;
@@ -33,28 +35,29 @@ void pilier_arc(float debut, float fin, float rayon){
 }
 
 
-void iris (float angle){
-
-		
-	myEngine.mvMatrixStack.pushMatrix();
-	
-		myEngine.setFlatColor(0,0,0);
-		myEngine.mvMatrixStack.addTranslation({1.1f, -2.0, 9.0f});
-		myEngine.mvMatrixStack.addRotation(angle,{0.0,0.0,1.0});
-		myEngine.mvMatrixStack.addHomothety(0.17);
-		myEngine.mvMatrixStack.addHomothety({1,1,4.5});
-		myEngine.updateMvMatrix();
-		sphere->draw();
-	myEngine.mvMatrixStack.popMatrix();
-	
-	
+void iris() {
+    myEngine.mvMatrixStack.pushMatrix();
+    myEngine.mvMatrixStack.addTranslation({-0.9f, 0.0f, 0.0f});
+    myEngine.updateMvMatrix();
+    myEngine.switchToPhongShading();
+    myEngine.setLightIntensity({100.0f, 0.0f, 0.0f}, 5);
+    myEngine.setLightPosition({-1.2f, 0.0f, 0.0f, 1.0f}, 5);
+    myEngine.setFlatColor(0.0f, 0.0f, 0.0f); 
+    myEngine.mvMatrixStack.addHomothety( 0.17f);
+    myEngine.mvMatrixStack.addHomothety({1.0f, 1.0f, 4.5f});
+    myEngine.updateMvMatrix();
+    sphere->draw();
+    myEngine.switchToFlatShading();
+    myEngine.mvMatrixStack.popMatrix();
 }
 
 void eye (){
+
+
 	myEngine.activateTexturing(true);
 	textures["feu"].attachTexture();
 	myEngine.mvMatrixStack.pushMatrix();
-	myEngine.mvMatrixStack.addTranslation({2.0f,-1.5, 9.0f});
+	myEngine.mvMatrixStack.addTranslation({0.0f, 0.5, 0.0f});
 	myEngine.mvMatrixStack.addHomothety({0.86f, 1, 0.86f});
 	myEngine.updateMvMatrix();
 	myEngine.setFlatColor(0, 0, 1);
@@ -62,7 +65,7 @@ void eye (){
 	myEngine.mvMatrixStack.popMatrix();
 	myEngine.mvMatrixStack.pushMatrix();
 	myEngine.mvMatrixStack.addRotation((M_PI),{1.0,0.0,0.0});
-	myEngine.mvMatrixStack.addTranslation({2.0f, 2.5, -9.0f});
+	myEngine.mvMatrixStack.addTranslation({0.0f, 0.5, 0.0f});
 	myEngine.mvMatrixStack.addHomothety({0.86f, 1, 0.86f});
 	myEngine.updateMvMatrix();
 	myEngine.setFlatColor(1, 0, 0);
@@ -70,9 +73,9 @@ void eye (){
 	myEngine.mvMatrixStack.popMatrix();
 	myEngine.activateTexturing(false);
 	textures["feu"].attachTexture();
-	
 
-	auto angle  = glfwGetTime();
+
+
 
 	myEngine.mvMatrixStack.pushMatrix();
 
@@ -81,8 +84,7 @@ void eye (){
 		myEngine.mvMatrixStack.pushMatrix();
 			myEngine.activateTexturing(true);
 			textures["feu"].attachTexture();
-			myEngine.mvMatrixStack.addTranslation({2.0f, -2.0, 9.0f});
-			myEngine.mvMatrixStack.addRotation(angle,{0.0,0.0,1.0});
+			myEngine.mvMatrixStack.addTranslation({0.0f, 0.0, 0.0f});
 			myEngine.updateMvMatrix();
 			myEngine.setFlatColor(0, 1, 0);
 			sphere->draw();
@@ -90,8 +92,9 @@ void eye (){
 			textures["feu"].attachTexture();
 		myEngine.mvMatrixStack.popMatrix();
 	
-		iris(angle);
+		
 	myEngine.mvMatrixStack.popMatrix();
+	iris();
 }
 
 void pilier(float rayon, float hauteur) {
@@ -266,7 +269,24 @@ void tour_de_sauron() {
 	textures["rempart"].attachTexture();
 	tour (6);
 
-	
+	float current = glfwGetTime();
 
-	eye();
+
+
+	if (current >= next_change) {
+		angle = current;
+        float delay = 2.0f + static_cast<float>(rand()) / RAND_MAX * 3.0f;
+        next_change = current + delay;
+        random1 = (int)rand();
+        random2 = (int)rand();
+    }
+	myEngine.mvMatrixStack.pushMatrix();
+        myEngine.mvMatrixStack.addTranslation({2.0f, -2.0, 9.0f});
+
+        float vitesse = 50.0f; 
+        myEngine.mvMatrixStack.addRotation((M_PI / 180.0f) * (random1 + angle * vitesse), {0.0f, 0.0f, 1.0f});
+        myEngine.mvMatrixStack.addRotation((M_PI / 180.0f) * (random2 + angle * vitesse), {0.0f, 1.0f, 0.0f});
+        
+        eye();
+    myEngine.mvMatrixStack.popMatrix();
 }

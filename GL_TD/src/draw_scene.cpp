@@ -156,7 +156,7 @@ void initScene()
 	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{0.0f, 0.0f, 0.0f});
 	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{0.0f, 0.0f, 0.0f});
 	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{0.0f, 0.0f, 0.0f});
-	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 1.0f}, STP3D::Vector3D{0.0f, 0.0f, 0.0f});
+	myEngine.addALight(STP3D::Vector4D{0.0f, 0.0f, 0.0f, 0.0f}, STP3D::Vector3D{0.0f, 0.0f, 0.0f});
 	myEngine.switchToFlatShading();
 	initTextures();
 
@@ -313,7 +313,7 @@ void drawScene()
 		myEngine.mvMatrixStack.addTranslation({pos_pnj[0], pos_pnj[1], pos_pnj[2] - 1.9f});
 		myEngine.mvMatrixStack.addRotation(M_PI / 180.f * angle_pnj, {0.0f, 0.0f, 1.0f});
 		myEngine.updateMvMatrix();
-		drawPNJ(2, 4, !is_ground_view);
+		drawPNJ(2, 3, !is_ground_view);
 	myEngine.mvMatrixStack.popMatrix();
 
 	myEngine.mvMatrixStack.pushMatrix();

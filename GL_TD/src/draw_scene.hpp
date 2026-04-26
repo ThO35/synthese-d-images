@@ -19,6 +19,7 @@ extern Vector3D pos_camera;    // Position of the camera
 extern float angle_horizontal; // Angle between x axis and viewpoint
 extern float angle_vertical;   // Angle between z axis and viewpoint
 extern float speed;            // Camera movement speed
+extern bool activeShader;      // Active shader phong
 
 /* OpenGL Engine */
 extern GLBI_Engine myEngine;

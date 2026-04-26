@@ -36,6 +36,8 @@ int length, width;
 std::vector<char> donnes;
 double scaling = 0.1;
 bool is_ground_view = false;
+bool line_mod = false;
+bool activeShader = false;
 
 /* Error handling function */
 void onError(int error, const char *description)
@@ -102,10 +104,12 @@ void onKey(GLFWwindow *window, int key, int /*scancode*/, int action, int /*mods
 			glfwSetWindowShouldClose(window, GLFW_TRUE);
 			break;
 		case GLFW_KEY_L:
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			activeShader = !activeShader;
 			break;
 		case GLFW_KEY_P:
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+			line_mod = !line_mod;
+			if (line_mod) glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			break;
 		case GLFW_KEY_F:
 			is_ground_view = !is_ground_view;
